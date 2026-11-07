@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>English Master Trainer (Fashion Emerald Edition)</title>
+  <title>English Master Trainer (Warm Edition)</title>
   <!-- Салют конфетти -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
     :root {
-      /* Палитра по фото */
-      --bg: #051367;              /* Глубокий кобальт / ультрамарин (юбка) */
-      --card-bg: #0c1a70;         /* Фон карточек */
-      --border: #14288f;          /* Границы карточек */
-      --accent: #0c8a52;          /* Изумрудно-зеленый (пальто) */
+      /* Светлая тёплая палитра */
+      --bg: #fbf9f4;                /* Нежный песочно-кремовый фон */
+      --card-bg: #ffffff;           /* Белые карточки */
+      --card-inner: #f4eee2;        /* Тёплый молочный блок задания */
+      --border: #e6dcce;            /* Мягкие бежевые границы */
+      --accent: #0c8a52;            /* Тёплый насыщенный изумруд */
       --accent-hover: #086b3f;
-      --teal: #007a9e;            /* Морской тил (сумка) */
-      --magenta: #d77ae3;         /* Сочная орхидея (рубашка) */
-      --cream: #f3f6e6;           /* Светлый крем для текста и акцентов */
-      --text: #ffffff;
-      --text-muted: #a6b4dc;
-      --success: #2dd4bf;
-      --danger: #f87171;
+      --teal: #007a9e;              /* Морской синий */
+      --berry: #b4226f;             /* Тёплый ягодный акцент для баланса */
+      --text: #292524;              /* Глубокий кофейно-графитовый текст */
+      --text-muted: #78716c;        /* Тёплый серый */
+      --success: #059669;
+      --danger: #dc2626;
+      --shadow: 0 10px 25px -5px rgba(120, 113, 108, 0.08), 0 8px 10px -6px rgba(120, 113, 108, 0.04);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
     body { 
@@ -37,8 +38,8 @@
     
     .header-card {
       background: var(--card-bg);
-      border: 2px solid var(--border);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
       padding: 18px 26px;
       border-radius: 18px;
       display: flex;
@@ -51,7 +52,7 @@
     .balance-value { 
       font-size: 34px; 
       font-weight: 800; 
-      color: var(--magenta); 
+      color: var(--berry); 
       margin-top: 2px; 
       cursor: pointer;
       display: inline-flex;
@@ -76,8 +77,8 @@
     }
 
     .control-select {
-      background: #08124d;
-      color: var(--cream);
+      background: #ffffff;
+      color: var(--text);
       border: 1px solid var(--border);
       padding: 9px 14px;
       border-radius: 10px;
@@ -85,6 +86,7 @@
       font-weight: 700;
       outline: none;
       cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
     }
     .control-select:focus { border-color: var(--accent); }
 
@@ -98,9 +100,9 @@
     }
 
     .btn-reset {
-      background: rgba(12, 138, 82, 0.15);
-      border: 1px solid var(--accent);
-      color: var(--cream);
+      background: #fdfaf6;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
       padding: 6px 10px;
       border-radius: 8px;
       font-size: 12px;
@@ -108,18 +110,13 @@
       cursor: pointer;
       transition: all 0.2s;
     }
-    .btn-reset:hover { background: var(--accent); }
-    .btn-reset.danger {
-      background: rgba(248, 113, 113, 0.1);
-      border-color: #8b3434;
-      color: #fca5a5;
-    }
-    .btn-reset.danger:hover { background: var(--danger); color: #fff; }
+    .btn-reset:hover { background: #f5ede1; color: var(--text); }
+    .btn-reset.danger:hover { background: #fee2e2; border-color: #fca5a5; color: var(--danger); }
 
     .trainer-card {
       background: var(--card-bg);
-      border: 2px solid var(--border);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
       border-radius: 20px;
       padding: 36px 32px;
       display: flex;
@@ -128,8 +125,8 @@
     }
 
     .phrase-box {
-      background: #08124d;
-      border: 1px solid var(--border);
+      background: var(--card-inner);
+      border: 1px solid #ebd9c2;
       padding: 28px 24px;
       border-radius: 16px;
       display: flex;
@@ -145,16 +142,16 @@
       font-size: 26px;
       font-weight: 700;
       line-height: 1.5;
-      color: var(--cream);
+      color: var(--text);
     }
 
     .story-full-text {
       font-size: 20px;
       line-height: 1.7;
-      color: var(--cream);
+      color: #292524;
       text-align: left;
-      background: #08124d;
-      border: 1px solid var(--border);
+      background: var(--card-inner);
+      border: 1px solid #ebd9c2;
       padding: 22px 26px;
       border-radius: 14px;
       white-space: pre-line;
@@ -169,9 +166,9 @@
     }
 
     .btn-sound {
-      background: rgba(0, 122, 158, 0.2);
-      border: 1px solid var(--teal);
-      color: #38bdf8;
+      background: #ffffff;
+      border: 1.5px solid var(--teal);
+      color: var(--teal);
       padding: 8px 18px;
       border-radius: 10px;
       font-size: 14px;
@@ -180,17 +177,18 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      box-shadow: 0 2px 4px rgba(0, 122, 158, 0.08);
       transition: all 0.2s;
     }
-    .btn-sound:hover { background: var(--teal); color: #fff; }
+    .btn-sound:hover { background: #f0f9ff; transform: translateY(-1px); }
 
     .input-group { display: flex; gap: 10px; align-items: center; width: 100%; }
     input[type="text"] {
       flex: 1;
       width: 100%;
-      background: #08124d;
-      border: 1px solid var(--border);
-      color: var(--cream);
+      background: #ffffff;
+      border: 1.5px solid #d6cbba;
+      color: var(--text);
       padding: 16px 20px;
       border-radius: 12px;
       font-size: 18px;
@@ -201,15 +199,15 @@
     }
     input[type="text"]:focus, textarea.story-textarea:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(12, 138, 82, 0.3);
+      box-shadow: 0 0 0 3px rgba(12, 138, 82, 0.15);
     }
 
     textarea.story-textarea {
       width: 100%;
       height: 180px;
-      background: #08124d;
-      border: 1px solid var(--border);
-      color: var(--cream);
+      background: #ffffff;
+      border: 1.5px solid #d6cbba;
+      color: var(--text);
       padding: 18px 20px;
       border-radius: 12px;
       font-size: 18px;
@@ -229,21 +227,25 @@
       font-weight: 700;
       cursor: pointer;
       white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(12, 138, 82, 0.2);
       transition: all 0.2s;
     }
-    .btn-action:hover { background: var(--accent-hover); }
+    .btn-action:hover { 
+      background: var(--accent-hover); 
+      transform: translateY(-1px);
+    }
 
     .btn-mic {
-      background: #08124d;
-      border: 1px solid var(--magenta);
-      color: var(--magenta);
+      background: #ffffff;
+      border: 1.5px solid #d6cbba;
+      color: var(--berry);
       padding: 14px 18px;
       border-radius: 12px;
       cursor: pointer;
       font-size: 22px;
       transition: all 0.2s;
     }
-    .btn-mic:hover { background: rgba(215, 122, 227, 0.15); }
+    .btn-mic:hover { border-color: var(--berry); background: #fdf4ff; }
     .btn-mic.recording {
       background: var(--danger);
       border-color: var(--danger);
@@ -265,34 +267,34 @@
       line-height: 1.4;
     }
     .status-line.correct {
-      background: rgba(45, 212, 191, 0.15) !important;
-      border: 1px solid var(--success) !important;
+      background: #ecfdf5 !important;
+      border: 1.5px solid #6ee7b7 !important;
       color: var(--success) !important;
       display: block !important;
     }
     .status-line.wrong {
-      background: rgba(248, 113, 113, 0.15) !important;
-      border: 1px solid var(--danger) !important;
+      background: #fef2f2 !important;
+      border: 1.5px solid #fca5a5 !important;
       color: var(--danger) !important;
       display: block !important;
     }
 
     .rule-box {
       display: none;
-      background: rgba(248, 113, 113, 0.1);
-      border: 1px solid var(--danger);
+      background: #fff7ed;
+      border: 1.5px solid #fed7aa;
       padding: 18px 20px;
       border-radius: 12px;
       font-size: 16px;
       line-height: 1.5;
-      color: #fca5a5;
+      color: #9a3412;
     }
-    .rule-title { font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .rule-title { font-weight: 800; color: #7c2d12; margin-bottom: 6px; }
 
     .transcription-box {
       display: none;
-      background: #08124d;
-      border: 1px dashed var(--border);
+      background: #fdfaf6;
+      border: 1.5px dashed var(--border);
       padding: 16px 20px;
       border-radius: 12px;
       font-size: 17px;
@@ -307,7 +309,7 @@
       font-size: 21px;
       font-weight: 700;
       font-style: normal;
-      color: var(--magenta);
+      color: var(--teal);
       margin-left: 6px;
       letter-spacing: 0.3px;
     }
@@ -469,7 +471,7 @@
   }
 
   function getStorageKey() {
-    return `english_trainer_emerald_l${currentLesson}_v1`;
+    return `english_trainer_warm_l${currentLesson}_v1`;
   }
 
   function capitalizeText(text) {
@@ -572,7 +574,7 @@
   function onLessonChange() {
     const select = document.getElementById('lessonSelector');
     currentLesson = parseInt(select.value, 10);
-    localStorage.setItem('english_trainer_emerald_active_lesson', currentLesson);
+    localStorage.setItem('english_trainer_warm_active_lesson', currentLesson);
     loadLesson();
   }
 
@@ -1008,6 +1010,7 @@
       return;
     }
 
+    // Блоки 1 и 2
     if (tasks.length === 0) return;
     let currentIdx = blockIndices[currentBlock] || 0;
 
@@ -1358,7 +1361,7 @@
         } else {
           statusLine.className = 'status-line wrong';
           statusLine.innerText = '✕ ПОВТОРНАЯ ОШИБКА (0 ₽)';
-          ruleText.innerHTML = `<strong>Эталон:</strong> ${item.correct}<br><span style="color:#a6b4dc">${item.rule}</span>`;
+          ruleText.innerHTML = `<strong>Эталон:</strong> ${item.correct}<br><span style="color:#78716c">${item.rule}</span>`;
           ruleBox.style.display = 'block';
           speakEnglish(voicePhrase);
         }
@@ -1505,7 +1508,7 @@
 
   window.onload = () => {
     buildLessonOptions();
-    const savedLesson = localStorage.getItem('english_trainer_emerald_active_lesson');
+    const savedLesson = localStorage.getItem('english_trainer_warm_active_lesson');
     if (savedLesson) currentLesson = parseInt(savedLesson, 10);
     initSpeech();
     loadLesson();
