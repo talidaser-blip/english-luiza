@@ -1221,7 +1221,14 @@
         targetFullText = (window.b6Story2 && window.b6Story2.target) ? window.b6Story2.target : (b6FullEnText || '');
       }
 
-     // Умная разбивка вашего ввода (по точкам, переносам строк или по количеству слов эталона)
+     // 1. Разбиваем эталон на предложения
+      const targetSentences = (targetFullText || '')
+        .replace(/([.!?])/g, '$1|')
+        .split('|')
+        .map(s => s.trim())
+        .filter(s => s.length > 0);
+
+      // 2. Умная разбивка вашего ввода (по точкам, переносам строк или по количеству слов эталона)
       let userSentences = (userStory || '')
         .replace(/([.!?\n]+)/g, '$1|')
         .split('|')
@@ -1245,38 +1252,6 @@
 
         if (reconstructed.length === targetSentences.length) {
           userSentences = reconstructed;
-        }
-      }
-
-      // Умная разбивка вашего ввода (по точкам, переносам строк или автопоиск по фразам эталона)
-      let userSentences = (userStory || '')
-        .replace(/([.!?\n]+)/g, '$1|')
-        .split('|')
-        .map(s => s.trim())
-        .filter(s => s.length > 0);
-
-      if (userSentences.length <= 1 && targetSentences.length > 1) {
-        let remaining = userStory.trim();
-        const extracted = [];
-        targetSentences.forEach((targetS, i) => {
-          if (i === targetSentences.length - 1) {
-            if (remaining.trim()) extracted.push(remaining.trim());
-          } else {
-            const nextWords = targetSentences[i + 1].trim().split(/\s+/).slice(0, 2).join(' ');
-            const nextClean = cleanText(nextWords);
-            const lowerRem = cleanText(remaining);
-            const idx = lowerRem.indexOf(nextClean);
-            if (idx > 0) {
-              const boundary = remaining.toLowerCase().indexOf(nextWords.toLowerCase().split(' ')[0]);
-              if (boundary > 0) {
-                extracted.push(remaining.slice(0, boundary).trim());
-                remaining = remaining.slice(boundary).trim();
-              }
-            }
-          }
-        });
-        if (extracted.length === targetSentences.length) {
-          userSentences = extracted;
         }
       }
 
