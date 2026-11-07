@@ -1228,15 +1228,15 @@
         .map(s => s.trim())
         .filter(s => s.length > 0);
 
-      // 2. Умная разбивка вашего ввода (по точкам, переносам строк или по количеству слов эталона)
+      // 2. Умная разбивка вашего ввода
       let userSentences = (userStory || '')
         .replace(/([.!?\n]+)/g, '$1|')
         .split('|')
         .map(s => s.trim())
         .filter(s => s.length > 0);
 
-      // Если весь текст вбит одной строкой без знаков препинания:
-      if (userSentences.length <= 1 && targetSentences.length > 1) {
+      // Если предложений получилось меньше, чем в эталоне (из-за пропущенных точек):
+      if (userSentences.length < targetSentences.length) {
         let rawTokens = userStory.trim().split(/\s+/).filter(Boolean);
         let reconstructed = [];
 
