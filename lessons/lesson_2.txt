@@ -1,1 +1,185 @@
+# УРОК: 2
+# НАЗВАНИЕ: Present Simple: He / She / It (-s), глаголы восприятия, наречия и устойчивые фразы
 
+# БЛОК 1: RU_TO_EN
+
+## ПОДБЛОК 1: БАЗОВЫЙ КАРКАС ДЛЯ 3-ГО ЛИЦА (-S)
+Он живет там. | He lives there. | Хи ливз зээ
+Она чувствует себя счастливой. | She feels happy. | Ши фиилз хэ́ппи
+Это помогает мне. | It helps me. | Ит хэлпс ми
+Он думает так. | He thinks so. | Хи синкс соу
+Она помнит это. | She remembers it. | Ши римэ́мбэз ит
+Он читает на английском. | He reads in English. | Хи рийдз ин и́нглиш
+Она читает английские книги. | She reads English books. | Ши рийдз и́нглиш букс
+Он знает это. | He knows it. | Хи ноуз ит
+Это происходит. | It happens. | Ит хэ́пэнз
+Он хочет большего. | He wants more. | Хи уо́нтс моо
+
+## ПОДБЛОК 2: ЗАКРЕПЛЕНИЕ ЭТАЛОНА И ПОВТОРЕНИЕ (УРОК 1 + УРОК 2)
+Я чувствую себя счастливым. | I feel happy. | Ай фиил хэ́ппи
+Мы помним это очень хорошо. | We remember it very well. | Уи римэ́мбэ ит вэри уэл
+Он живет в этом доме. | He lives in this house. | Хи ливз ин зис хаус
+Они помогают мне. | They help me. | Зэй хэлп ми
+Она живет в этом месте. | She lives in this place. | Ши ливз ин зис плэйс
+Ты говоришь по-английски. | You speak English. | Ю спиик и́нглиш
+Она живет в том месте. | She lives in that place. | Ши ливз ин зэт плэйс
+У меня есть идея. | I have an idea. | Ай хэв эн айди́а
+Она видит эту ошибку. | She sees this mistake. | Ши сииз зис мистэ́йк
+Он видит ту ошибку. | He sees that mistake. | Хи сииз зэт мистэ́йк
+
+## ПОДБЛОК 3: ГЛАГОЛЫ ВОСПРИЯТИЯ И ХАРАКТЕРИСТИКИ (+ ADJECTIVE)
+Это выглядит интересно. | It looks interesting. | Ит лукс и́нтрэстин
+Это кажется интересным. | It seems interesting. | Ит сиимз и́нтрэстин
+Это выглядит странно. | It looks strange. | Ит лукс стрэйндж
+Она чувствует себя счастливой здесь. | She feels happy here. | Ши фиилз хэ́ппи хи́э
+Это кажется странным. | It seems strange. | Ит сиимз стрэйндж
+Он говорит по-английски очень хорошо. | He speaks English very well. | Хи спиикс и́нглиш вэри уэл
+Она говорит по-английски очень хорошо. | She speaks English very well. | Ши спиикс и́нглиш вэри уэл
+Она хочет больше практики. | She wants more practice. | Ши уо́нтс моо прэ́ктис
+Он читает книги на английском. | He reads books in English. | Хи рийдз букс ин и́нглиш
+Это помогает нам. | It helps us. | Ит хэлпс ас
+
+## ПОДБЛОК 4: НАРЕЧИЯ И УСИЛИТЕЛИ (ALSO, REALLY В СЕРЕДИНЕ)
+Он также работает здесь. | He also works here. | Хи о́лсоу уёокс хи́э
+Я также думаю так. | I also think so. | Ай о́лсоу синк соу
+Она также помнит это. | She also remembers it. | Ши о́лсоу римэ́мбэз ит
+Это реально помогает мне. | It really helps me. | Ит ри́эли хэлпс ми
+Это действительно случается. | It really happens. | Ит ри́эли хэ́пэнз
+Он действительно знает это. | He really knows it. | Хи ри́эли ноуз ит
+Она также живет в этой стране. | She also lives in this country. | Ши о́лсоу ливз ин зис ка́нтри
+Они также понимают это. | They also understand it. | Зэй о́лсоу андэстэ́нд ит
+Он действительно хочет большего. | He really wants more. | Хи ри́эли уо́нтс моо
+Это реально выглядит интересным. | It really looks interesting. | Ит ри́эли лукс и́нтрэстин
+
+## ПОДБЛОК 5: СЛОЖНЫЙ МИКС
+Он живет в том доме и работает здесь. | He lives in that house and works here. | Хи ливз ин зэт хаус энд уёокс хи́э
+Она читает английские книги каждый день. | She reads English books every day. | Ши рийдз и́нглиш букс э́ври дэй
+Он видит эту ошибку очень хорошо. | He sees this mistake very well. | Хи сииз зис мистэ́йк вэри уэл
+Она действительно чувствует себя счастливой. | She really feels happy. | Ши ри́эли фиилз хэ́ппи
+Это место выглядит интересным. | This place looks interesting. | Зис плэйс лукс и́нтрэстин
+Он также помнит ту ошибку. | He also remembers that mistake. | Хи о́лсоу римэ́мбэз зэт мистэ́йк
+Она говорит по-английски и хочет больше практики. | She speaks English and wants more practice. | Ши спиикс и́нглиш энд уо́нтс моо прэ́ктис
+Мы знаем, это действительно происходит. | We know it really happens. | Уи ноу ит ри́эли хэ́пэнз
+Он читает на английском очень хорошо. | He reads in English very well. | Хи рийдз ин и́нглиш вэри уэл
+Это действительно кажется странным. | It really seems strange. | Ит ри́эли сиимз стрэйндж
+
+
+# БЛОК 2: EN_TO_RU
+
+## ПОДБЛОК 1: БАЗОВЫЙ КАРКАС ДЛЯ 3-ГО ЛИЦА (-S)
+He lives there. | Он живет там. | Хи ливз зээ
+She feels happy. | Она чувствует себя счастливой. | Ши фиилз хэ́ппи
+It helps me. | Это помогает мне. | Ит хэлпс ми
+He thinks so. | Он думает так. | Хи синкс соу
+She remembers it. | Она помнит это. | Ши римэ́мбэз ит
+He reads in English. | Он читает на английском. | Хи рийдз ин и́нглиш
+She reads English books. | Она читает английские книги. | Ши рийдз и́нглиш букс
+He knows it. | Он знает это. | Хи ноуз ит
+It happens. | Это происходит. | Ит хэ́пэнз
+He wants more. | Он хочет большего. | Хи уо́нтс моо
+
+## ПОДБЛОК 2: ЗАКРЕПЛЕНИЕ ЭТАЛОНА И ПОВТОРЕНИЕ
+I feel happy. | Я чувствую себя счастливым. | Ай фиил хэ́ппи
+We remember it very well. | Мы помним это очень хорошо. | Уи римэ́мбэ ит вэри уэл
+He lives in this house. | Он живет в этом доме. | Хи ливз ин зис хаус
+They help me. | Они помогают мне. | Зэй хэлп ми
+She lives in this place. | Она живет в этом месте. | Ши ливз ин зис плэйс
+You speak English. | Ты говоришь по-английски. | Ю спиик и́нглиш
+She lives in that place. | Она живет в том месте. | Ши ливз ин зэт плэйс
+I have an idea. | У меня есть идея. | Ай хэв эн айди́а
+She sees this mistake. | Она видит эту ошибку. | Ши сииз зис мистэ́йк
+He sees that mistake. | Он видит ту ошибку. | Хи сииз зэт мистэ́йк
+
+## ПОДБЛОК 3: ГЛАГОЛЫ ВОСПРИЯТИЯ И ХАРАКТЕРИСТИКИ
+It looks interesting. | Это выглядит интересным. | Ит лукс и́нтрэстин
+It seems interesting. | Это кажется интересным. | Ит сиимз и́нтрэстин
+It looks strange. | Это выглядит странно. | Ит лукс стрэйндж
+She feels happy here. | Она чувствует себя счастливой здесь. | Ши фиилз хэ́ппи хи́э
+It seems strange. | Это кажется странным. | Ит сиимз стрэйндж
+He speaks English very well. | Он говорит по-английски очень хорошо. | Хи спиикс и́нглиш вэри уэл
+She speaks English very well. | Она говорит по-английски очень хорошо. | Ши спиикс и́нглиш вэри уэл
+She wants more practice. | Она хочет больше практики. | Ши уо́нтс моо прэ́ктис
+He reads books in English. | Он читает книги на английском. | Хи рийдз букс ин и́нглиш
+It helps us. | Это помогает нам. | Ит хэлпс ас
+
+## ПОДБЛОК 4: НАРЕЧИЯ И УСИЛИТЕЛИ (ALSO, REALLY)
+He also works here. | Он также работает здесь. | Хи о́лсоу уёокс хи́э
+I also think so. | Я также думаю так. | Ай о́лсоу синк соу
+She also remembers it. | Она также помнит это. | Ши о́лсоу римэ́мбэз ит
+It really helps me. | Это реально помогает мне. | Ит ри́эли хэлпс ми
+It really happens. | Это действительно случается. | Ит ри́эли хэ́пэнз
+He really knows it. | Он действительно знает это. | Хи ри́эли ноуз ит
+She also lives in this country. | Она также живет в этой стране. | Ши о́лсоу ливз ин зис ка́нтри
+They also understand it. | Они также понимают это. | Зэй о́лсоу андэстэ́нд ит
+He really wants more. | Он действительно хочет большего. | Хи ри́эли уо́нтс моо
+It really looks interesting. | Это реально выглядит интересным. | Ит ри́эли лукс и́нтрэстин
+
+## ПОДБЛОК 5: СЛОЖНЫЙ МИКС
+He lives in that house and works here. | Он живет в том доме и работает здесь. | Хи ливз ин зэт хаус энд уёокс хи́э
+She reads English books every day. | Она читает английские книги каждый день. | Ши рийдз и́нглиш букс э́ври дэй
+He sees this mistake very well. | Он видит эту ошибку очень хорошо. | Хи сииз зис мистэ́йк вэри уэл
+She really feels happy. | Она действительно чувствует себя счастливой. | Ши ри́эли фиилз хэ́ппи
+This place looks interesting. | Это место выглядит интересным. | Зис плэйс лукс и́нтрэстин
+He also remembers that mistake. | Он также помнит ту ошибку. | Хи о́лсоу римэ́мбэз зэт мистэ́йк
+She speaks English and wants more practice. | Она говорит по-английски и хочет больше практики. | Ши спиикс и́нглиш энд уо́нтс моо прэ́ктис
+We know it really happens. | Мы знаем, это действительно происходит. | Уи ноу ит ри́эли хэ́пэнз
+He reads in English very well. | Он читает на английском очень хорошо. | Хи рийдз ин и́нглиш вэри уэл
+It really seems strange. | Это действительно кажется странным. | Ит ри́эли сиимз стрэйндж
+
+
+# БЛОК 3: ОШИБКИ
+He live there. | He lives there. | Хи ливз зээ | С местоимениями He/She/It в утверждении глагол требует окончания -s.
+She feel herself happy. | She feels happy. | Ши фиилз хэ́ппи | Глагол feel уже означает «чувствовать себя», возвратное местоимение не требуется.
+It look interestingly. | It looks interesting. | Ит лукс и́нтрэстин | С глаголом look используется прилагательное (interesting), а не наречие.
+He also works here also. | He also works here. | Хи о́лсоу уёокс хи́э | Наречие also ставится в середине предложения перед смысловым глаголом.
+It really happen. | It really happens. | Ит ри́эли хэ́пэнз | С местоимением It к смысловому глаголу обязательно добавляется окончание -s.
+He lives in this the house. | He lives in this house. | Хи ливз ин зис хаус | После указательных местоимений this / that артикль не употребляется.
+She speaks very well English. | She speaks English very well. | Ши спиикс и́нглиш вэри уэл | Сочетание very well ставится строго в конце фразы.
+He reads on English. | He reads in English. | Хи рийдз ин и́нглиш | «Читать на английском» — устойчивое сочетание с предлогом in: in English.
+She wants a more practice. | She wants more practice. | Ши уо́нтс моо прэ́ктис | Перед словом more с неисчисляемым существительным артикль a не ставится.
+He see that mistake. | He sees that mistake. | Хи сииз зэт мистэ́йк | Для He к глаголу see добавляется окончание -s.
+
+
+# БЛОК 4: АУДИРОВАНИЕ
+
+## ПОДБЛОК 1
+He lives there. | Хи ливз зээ
+She feels happy. | Ши фиилз хэ́ппи
+It really helps me. | Ит ри́эли хэлпс ми
+He reads in English. | Хи рийдз ин и́нглиш
+
+## ПОДБЛОК 2
+It looks interesting. | Ит лукс и́нтрэстин
+She speaks English very well. | Ши спиикс и́нглиш вэри уэл
+He also works here. | Хи о́лсоу уёокс хи́э
+It really happens. | Ит ри́эли хэ́пэнз
+
+## ПОДБЛОК 3
+He lives in this house. | Хи ливз ин зис хаус
+She sees this mistake. | Ши сииз зис мистэ́йк
+She wants more practice. | Ши уо́нтс моо прэ́ктис
+It seems strange. | Ит сиимз стрэйндж
+
+
+# БЛОК 5: СЛОЖНЫЕ ПРЕДЛОЖЕНИЯ
+
+## СТУПЕНЬ 1: EN_TO_RU
+He lives in that house and works here. | Он живет в том доме и работает здесь. | Хи ливз ин зэт хаус энд уёокс хи́э
+She speaks English very well and it really helps me. | Она очень хорошо говорит по-английски, и это реально помогает мне. | Ши спиикс и́нглиш вэри уэл энд ит ри́эли хэлпс ми
+I see he reads English books and wants more practice. | Я вижу, он читает английские книги и хочет больше практики. | Ай сии хи рийдз и́нглиш букс энд уо́нтс моо прэ́ктис
+It looks interesting because he also works in this place. | Это выглядит интересным, потому что он также работает в этом месте. | Ит лукс и́нтрэстин бико́з хи о́лсоу уёокс ин зис плэйс
+
+## СТУПЕНЬ 2: RU_TO_EN
+Я думаю, он читает на английском очень хорошо. | I think he reads in English very well. | Ай синк хи рийдз ин и́нглиш вэри уэл
+Она помнит эту ошибку, и это действительно помогает нам. | She remembers this mistake and it really helps us. | Ши римэ́мбэз зис мистэ́йк энд ит ри́эли хэлпс ас
+Ты видишь, это выглядит интересным и кажется важным. | You see it looks interesting and seems important. | Ю сии ит лукс и́нтрэстин энд сиимз импо́отэнт
+Он знает это, потому что он также живет в этой стране. | He knows it because he also lives in this country. | Хи ноуз ит бико́з хи о́лсоу ливз ин зис ка́нтри
+
+
+# БЛОК 6: СВЯЗНЫЙ ТЕКСТ
+
+## EN_TEXT
+My friend lives in London and works here. He reads in English and speaks English very well. He really loves reading English books. It looks interesting and it really helps him. He sees that mistake and remembers it. Now he feels happy. It really happens! | Мой друг живет в Лондоне и работает здесь. Он читает на английском и говорит по-английски очень хорошо. Он действительно любит читать английские книги. Это выглядит интересным, и это реально помогает ему. Он видит ту ошибку и помнит её. Сейчас он чувствует себя счастливым. Это действительно происходит!
+
+## RU_TEXT
+Она живет в этом доме. Она также работает в том месте. Она часто читает книги на английском и понимает нас очень хорошо. Это кажется странным, но это действительно помогает мне. Она видит эту ошибку и хочет больше практики. Она чувствует себя счастливой здесь. | She lives in this house. She also works in that place. She often reads books in English and understands us very well. It seems strange, but it really helps me. She sees this mistake and wants more practice. She feels happy here.
