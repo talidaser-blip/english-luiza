@@ -1254,6 +1254,30 @@
           userSentences = reconstructed;
         }
       }
+
+      let errorsList = [];
+
+      // 3. Строгая пословная проверка каждого предложения
+      targetSentences.forEach((targetS, idx) => {
+        const userS = userSentences[idx] || '';
+        const cleanT = cleanText(targetS);
+        const cleanU = cleanText(userS);
+
+        let isMatch = false;
+        if (currentStage === 0) {
+          isMatch = checkRussianMatch(userS, targetS);
+        } else {
+          isMatch = (cleanU === cleanT);
+        }
+
+        if (!isMatch) {
+          errorsList.push({
+            num: idx + 1,
+            user: userS || '(пропущено)',
+            expected: targetS
+          });
+        }
+      });
       if (errorsList.length === 0) {
         balance += 10;
         statusLine.className = 'status-line correct';
