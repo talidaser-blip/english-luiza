@@ -416,8 +416,6 @@
 
   let b6FullEnText = '';
   let b6FullRuText = '';
-  let b6EnSentences = [];
-  let b6RuSentences = [];
 
   let recognition = null;
   let isRecording = false;
@@ -602,10 +600,6 @@
 
   function isRussianText(text) {
     return /[а-яёА-ЯЁ]/.test(text);
-  }
-
-  function extractSentences(text) {
-    return (text.match(/[^.!?]+[.!?]+/g) || [text]).map(s => s.trim()).filter(Boolean);
   }
 
   function parseCurrentBlock() {
@@ -997,6 +991,408 @@
       document.getElementById('subblockLabel').innerText = b3CurrentRound === 1 ? 'Круг 1' : 'Штрафной раунд';
       document.getElementById('progressCount').innerText = `${currentIdx + 1} из ${activeList.length}`;
       document.getElementById('balanceDisplay').innerText = `${balance} ₽`;
+      return;
+    }
+
+    // Блоки 1 и 2
+    let currentIdx = blockIndices[currentBlock] || 0;
+    if (tasks.length === 0 || currentIdx >= tasks.length) return;
+    const t = tasks[currentIdx];
+    const isCorrect = currentBlock === 1 ? isEnglishMatch(userAns, t.en) : checkRussianMatch(userAns, t.ru);
+
+    if (isCorrect) {
+      balance += 5;
+      statusLine.className = 'status-line correct';
+      statusLine.innerText = '✓ ВЕРНО! (+5 ₽)';
+    } else {
+      balance -= 5;
+      statusLine.className = 'status-line wrong';
+      statusLine.innerText = `✕ ОШИБКА (-5 ₽) | Правильно: ${currentBlock === 1 ? t.en : t.ru}`;
+    }
+
+    document.getElementById('balanceDisplay').innerText = `${balance} ₽`;
+    saveProgress();
+    speakEnglish(t.en);
+
+    if (t.trans) {
+      transText.innerText = t.trans;
+      transBox.classList.add('visible');
+    }
+
+    isWaitingNext = true;
+    btn.innerText = 'Дальше ➔';
+  }
+
+  function advanceToBlock2() {
+    currentBlock = 2;
+    document.getElementById('blockSelector').value = 2;
+    parseCurrentBlock();
+    saveProgress();
+    alert('Поздравляем! Блок 1 завершён. Переходим ко Блоку 2 (EN ➔ RU)!');
+    renderCurrentTask();
+  }
+
+  function advanceToBlock3() {
+    currentBlock = 3;
+    document.getElementById('blockSelector').value = 3;
+    parseCurrentBlock();
+    saveProgress();
+    alert('Поздравляем! Блок 2 завершён. Переходим ко Блоку 3 (Ошибки)!');
+    renderCurrentTask();
+  }
+
+  function advanceToBlock4() {
+    currentBlock = 4;
+    document.getElementById('blockSelector').value = 4;
+    parseCurrentBlock();
+    saveProgress();
+    alert('Поздравляем! Блок 3 завершён. Переходим ко Блоку 4 (Аудирование)!');
+    renderCurrentTask();
+  }
+
+  function advanceToBlock5() {
+    currentBlock = 5;
+    document.getElementById('blockSelector').value = 5;
+    parseCurrentBlock();
+    saveProgress();
+    alert('Поздравляем! Блок 4 завершён. Переходим ко Блоку 5 (Сложные предложения)!');
+    renderCurrentTask();
+  }
+
+  function advanceToBlock6() {
+    currentBlock = 6;
+    document.getElementById('blockSelector').value = 6;
+    parseCurrentBlock();
+    saveProgress();
+    alert('Поздравляем! Блок 5 завершён. Переходим к финальному Блоку 6 (Связный текст)!');
+    renderCurrentTask();
+  }
+
+  function finishAllBlocks() {
+    document.getElementById('singlePhraseBox').style.display = 'flex';
+    document.getElementById('storyContainer').style.display = 'none';
+    document.getElementById('sourcePhrase').innerText = `🎉 Все задания Урока ${currentLesson} успешно завершены!`;
+    document.getElementById('listenBtn').style.display = 'none';
+    document.getElementById('slowBtn').style.display = 'none';
+    document.getElementById('inputGroupRow').style.display = 'none';
+    document.getElementById('transcriptionBox').classList.remove('visible');
+    document.getElementById('ruleBox').style.display = 'none';
+    
+    document.getElementById('subblockLabel').innerText = 'УРОК ПРОЙДЕН';
+    document.getElementById('progressCount').innerText = 'ФИНИШ';
+
+    const st = document.getElementById('statusLine');
+    st.className = 'status-line correct';
+    st.style.display = 'block';
+    st.innerText = `Великолепно! Все 6 блоков пройдены! Баланс урока: ${balance} ₽.`;
+
+    if (typeof confetti === 'function') {
+      confetti({ particleCount: 180, spread: 100, origin: { y: 0.6 } });
+    }
+  }
+
+  document.getElementById('userInput').addEventListener('input', function() {
+    const val = this.value;
+    if (val.length > 0 && val.charAt(0) !== val.charAt(0).toUpperCase()) {
+      const start = this.selectionStart;
+      const end = this.selectionEnd;
+      this.value = capitalizeText(val);
+      this.setSelectionRange(start, end);
+    }
+  });
+
+  document.getElementById('storyInput').addEventListener('input', function() {
+    const val = this.value;
+    if (val.length > 0 && val.charAt(0) !== val.charAt(0).toUpperCase()) {
+      const start = this.selectionStart;
+      const end = this.selectionEnd;
+      this.value = capitalizeText(val);
+      this.setSelectionRange(start, end);
+    }
+  });
+
+  document.getElementById('userInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleAction();
+    }
+  });
+
+  function handleAction() {
+    if (isWaitingNext) {
+      const nextIdx = (blockIndices[currentBlock] || 0) + 1;
+      blockIndices[currentBlock] = nextIdx;
+      saveProgress();
+
+      if (currentBlock === 1 && nextIdx >= tasks.length) { advanceToBlock2(); return; }
+      if (currentBlock === 2 && nextIdx >= tasks.length) { advanceToBlock3(); return; }
+      if (currentBlock === 3) {
+        const activeList = b3CurrentRound === 1 ? b3Round1 : b3Round2;
+        if (nextIdx >= activeList.length) {
+          if (b3CurrentRound === 1 && b3Round2.length > 0) {
+            b3CurrentRound = 2; blockIndices[3] = 0; saveProgress();
+          } else { advanceToBlock4(); return; }
+        }
+      }
+      if (currentBlock === 4) {
+        const activeList = b4CurrentRound === 1 ? b4Round1 : b4Round2;
+        if (nextIdx >= activeList.length) {
+          if (b4CurrentRound === 1 && b4Round2.length > 0) {
+            b4CurrentRound = 2; blockIndices[4] = 0; saveProgress();
+          } else { advanceToBlock5(); return; }
+        }
+      }
+      if (currentBlock === 5) {
+        const activeList = b5CurrentRound === 1 ? b5Round1 : b5Round2;
+        if (nextIdx >= activeList.length) {
+          if (b5CurrentRound === 1 && b5Round2.length > 0) {
+            b5CurrentRound = 2; blockIndices[5] = 0; saveProgress();
+          } else { advanceToBlock6(); return; }
+        }
+      }
+      renderCurrentTask();
+    } else {
+      checkAnswer();
+    }
+  }
+
+  function cleanText(str) {
+    return (str || '').toLowerCase().replace(/ё/g, 'е').replace(/[-–—]/g, ' ').replace(/[.,!?;:'"()]/g, '').replace(/\s+/g, ' ').trim();
+  }
+
+  function normalizeRussianWord(w) {
+    if (/^(со|с)$/.test(w)) return 'с';
+    if (/^(свой|мой|своя|моя|свое|мое|свои|мои)$/.test(w)) return 'свой';
+    return w;
+  }
+
+  function checkRussianMatch(userText, targetText) {
+    const cleanUser = cleanText(userText);
+    const cleanTarget = cleanText(targetText);
+    if (cleanUser === cleanTarget) return true;
+    const userWords = cleanUser.split(' ').filter(Boolean).map(normalizeRussianWord).sort().join(' ');
+    const targetWords = cleanTarget.split(' ').filter(Boolean).map(normalizeRussianWord).sort().join(' ');
+    return userWords === targetWords;
+  }
+
+  function isEnglishMatch(userText, targetText) {
+    let cleanUser = cleanText(userText);
+    const variants = targetText.split('/').map(v => cleanText(v));
+    return variants.includes(cleanUser);
+  }
+
+  function checkAnswer() {
+    if (isRecording) toggleMic();
+
+    const statusLine = document.getElementById('statusLine');
+    const btn = document.getElementById('actionBtn');
+    const transBox = document.getElementById('transcriptionBox');
+    const transText = document.getElementById('transcriptionText');
+    const ruleBox = document.getElementById('ruleBox');
+    const ruleText = document.getElementById('ruleText');
+
+    if (currentBlock === 6) {
+      const storyInput = document.getElementById('storyInput');
+      const userStory = storyInput.value.trim();
+      if (!userStory) return;
+
+      storyInput.disabled = true;
+      const currentStage = blockIndices[6] || 0;
+
+      let targetFullText = '';
+      if (currentStage === 0) {
+        targetFullText = (window.b6Story1 && window.b6Story1.target) ? window.b6Story1.target : (b6FullRuText || '');
+      } else {
+        targetFullText = (window.b6Story2 && window.b6Story2.target) ? window.b6Story2.target : (b6FullEnText || '');
+      }
+
+      // Разбиваем эталон и ввод на отдельные предложения
+      const splitIntoSentences = (txt) => (txt || '')
+        .replace(/([.!?])/g, '$1|')
+        .split('|')
+        .map(s => s.trim())
+        .filter(s => s.length > 0);
+
+      const targetSentences = splitIntoSentences(targetFullText);
+      const userSentences = splitIntoSentences(userStory);
+
+      let errorsList = [];
+
+      // Строгая пословная проверка каждого предложения
+      targetSentences.forEach((targetS, idx) => {
+        const userS = userSentences[idx] || '';
+        const cleanT = cleanText(targetS);
+        const cleanU = cleanText(userS);
+
+        let isMatch = false;
+        if (currentStage === 0) {
+          isMatch = checkRussianMatch(userS, targetS);
+        } else {
+          isMatch = (cleanU === cleanT);
+        }
+
+        if (!isMatch) {
+          errorsList.push({
+            num: idx + 1,
+            user: userS || '(пропущено)',
+            expected: targetS
+          });
+        }
+      });
+
+      if (errorsList.length === 0) {
+        balance += 10;
+        statusLine.className = 'status-line correct';
+        statusLine.innerText = '✓ ВЕЛИКОЛЕПНО! Весь связный текст переведён абсолютно точно (+10 ₽)';
+        if (currentStage === 1) playFullStory();
+      } else {
+        balance -= 5;
+        statusLine.className = 'status-line wrong';
+        statusLine.innerText = `✕ НАЙДЕНЫ ОШИБКИ (-5 ₽)! Не совпало предложений: ${errorsList.length}`;
+
+        let errorDetails = errorsList.map(e => 
+          `<div style="margin-top:6px;"><strong>Предложение ${e.num}:</strong><br>` +
+          `<span style="color:#ef4444;">Ваш вариант:</span> ${e.user}<br>` +
+          `<span style="color:#10b981;">Правильно:</span> ${e.expected}</div>`
+        ).join('<hr style="border:none; border-top:1px dashed #fca5a5; margin:8px 0;">');
+
+        ruleText.innerHTML = errorDetails;
+        ruleBox.style.display = 'block';
+      }
+
+      document.getElementById('balanceDisplay').innerText = `${balance} ₽`;
+      saveProgress();
+      isWaitingNext = true;
+      btn.innerText = (currentStage === 0) ? 'Перейти к Ступени 2 ➔' : 'Завершить урок ➔';
+      return;
+    }
+
+    const input = document.getElementById('userInput');
+    const userAns = input.value.trim();
+    if (!userAns) return;
+    input.disabled = true;
+
+    if (currentBlock === 5) {
+      const currentIdx = blockIndices[5] || 0;
+      const item = b5CurrentRound === 1 ? b5Round1[currentIdx] : b5Round2[currentIdx];
+      const isCorrect = item.isEnToRu ? checkRussianMatch(userAns, item.ru) : isEnglishMatch(userAns, item.en);
+
+      if (b5CurrentRound === 1) {
+        if (isCorrect) {
+          balance += 5;
+          statusLine.className = 'status-line correct';
+          statusLine.innerText = '✓ ВЕРНО! (+5 ₽)';
+          speakEnglish(item.en, 0.9);
+          if (item.trans) { transText.innerText = item.trans; transBox.classList.add('visible'); }
+        } else {
+          balance -= 5;
+          statusLine.className = 'status-line wrong';
+          statusLine.innerText = '✕ ОШИБКА (-5 ₽) | На пересдачу!';
+          b5Round2.push(item);
+        }
+      } else {
+        if (isCorrect) {
+          balance += 3;
+          statusLine.className = 'status-line correct';
+          statusLine.innerText = '✓ ИСПРАВЛЕНО! (+3 ₽)';
+          speakEnglish(item.en, 0.9);
+          if (item.trans) { transText.innerText = item.trans; transBox.classList.add('visible'); }
+        } else {
+          statusLine.className = 'status-line wrong';
+          statusLine.innerText = '✕ ПОВТОРНАЯ ОШИБКА (0 ₽)';
+          ruleText.innerHTML = `<strong>Эталон:</strong> ${item.isEnToRu ? item.ru : item.en}`;
+          ruleBox.style.display = 'block';
+          speakEnglish(item.en, 0.9);
+        }
+      }
+
+      document.getElementById('balanceDisplay').innerText = `${balance} ₽`;
+      saveProgress();
+      isWaitingNext = true;
+      btn.innerText = 'Дальше ➔';
+      return;
+    }
+
+    if (currentBlock === 4) {
+      const currentIdx = blockIndices[4] || 0;
+      const item = b4CurrentRound === 1 ? b4Round1[currentIdx] : b4Round2[currentIdx];
+      const isCorrect = isEnglishMatch(userAns, item.en);
+
+      if (b4CurrentRound === 1) {
+        if (isCorrect) {
+          balance += 5;
+          statusLine.className = 'status-line correct';
+          statusLine.innerText = '✓ ВЕРНО! (+5 ₽)';
+          speakEnglish(item.en, 1.0);
+          if (item.trans) { transText.innerText = item.trans; transBox.classList.add('visible'); }
+        } else {
+          balance -= 5;
+          statusLine.className = 'status-line wrong';
+          statusLine.innerText = '✕ ОШИБКА (-5 ₽) | На повторение!';
+          b4Round2.push(item);
+        }
+      } else {
+        if (isCorrect) {
+          balance += 3;
+          statusLine.className = 'status-line correct';
+          statusLine.innerText = '✓ ИСПРАВЛЕНО! (+3 ₽)';
+          speakEnglish(item.en, 1.0);
+          if (item.trans) { transText.innerText = item.trans; transBox.classList.add('visible'); }
+        } else {
+          statusLine.className = 'status-line wrong';
+          statusLine.innerText = '✕ ПОВТОРНАЯ ОШИБКА (0 ₽)';
+          ruleText.innerHTML = `<strong>Эталон:</strong> ${item.en}`;
+          ruleBox.style.display = 'block';
+          speakEnglish(item.en, 1.0);
+        }
+      }
+
+      document.getElementById('balanceDisplay').innerText = `${balance} ₽`;
+      saveProgress();
+      isWaitingNext = true;
+      btn.innerText = 'Дальше ➔';
+      return;
+    }
+
+    if (currentBlock === 3) {
+      const currentIdx = blockIndices[3] || 0;
+      const item = b3CurrentRound === 1 ? b3Round1[currentIdx] : b3Round2[currentIdx];
+      const isCorrect = isEnglishMatch(userAns, item.correct);
+      const voicePhrase = item.correct.split('/')[0].trim();
+
+      if (b3CurrentRound === 1) {
+        if (isCorrect) {
+          balance += 5;
+          statusLine.className = 'status-line correct';
+          statusLine.innerText = '✓ ВЕРНО! (+5 ₽)';
+          speakEnglish(voicePhrase);
+          if (item.trans) { transText.innerText = item.trans; transBox.classList.add('visible'); }
+        } else {
+          balance -= 5;
+          statusLine.className = 'status-line wrong';
+          statusLine.innerText = '✕ ОШИБКА (-5 ₽) | На пересдачу!';
+          b3Round2.push(item);
+        }
+      } else {
+        if (isCorrect) {
+          balance += 3;
+          statusLine.className = 'status-line correct';
+          statusLine.innerText = '✓ ОШИБКА ИСПРАВЛЕНА! (+3 ₽)';
+          speakEnglish(voicePhrase);
+          if (item.trans) { transText.innerText = item.trans; transBox.classList.add('visible'); }
+        } else {
+          statusLine.className = 'status-line wrong';
+          statusLine.innerText = '✕ ПОВТОРНАЯ ОШИБКА (0 ₽)';
+          ruleText.innerHTML = `<strong>Эталон:</strong> ${item.correct}<br><span style="color:#64748b">${item.rule}</span>`;
+          ruleBox.style.display = 'block';
+          speakEnglish(voicePhrase);
+        }
+      }
+
+      document.getElementById('balanceDisplay').innerText = `${balance} ₽`;
+      saveProgress();
+      isWaitingNext = true;
+      btn.innerText = 'Дальше ➔';
       return;
     }
 
