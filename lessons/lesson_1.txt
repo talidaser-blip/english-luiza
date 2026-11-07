@@ -1,181 +1,173 @@
-# УРОК: 2
-# НАЗВАНИЕ: Present Simple: He / She / It (-s, -es, -ies), местоимения в объектном падеже и устойчивые фразы
+# УРОК: 1
+# НАЗВАНИЕ: Базовые глаголы и Present Simple
 
 # БЛОК 1: RU_TO_EN
-## ПОДБЛОК 1: БАЗОВЫЕ КОНСТРУКЦИИ (5 ИЗ УР.1 + 5 ИЗ УР.2)
-Я живу в Нью-Йорке. | I live in New York. | Ай лив ин нью йоок
-Он работает так много. | He works so much. | Хи уёокс соу матч
-Мы ходим на работу. | We go to work. | Уи гоу ту уёок
-Она понимает того человека. | She understands that person. | Ши андэстэ́ндз зэт пёосн
-Я говорю по-английски. | I speak English. | Ай спиик и́нглиш
-Это стоит десять долларов. | It costs ten dollars. | Ит костс тэн до́ларз
-Они живут здесь. | They live here. | Зэй лив хи́э
-Она смотрит эти видео. | She watches these videos. | Ши уо́тчиз зииз ви́диоуз
-Я знаю это очень хорошо. | I know it very well. | Ай ноу ит вэри уэл
-Он чувствует себя лучше. | He feels better. | Хи фиилз бэ́тэ
 
-## ПОДБЛОК 2: ЗАКРЕПЛЕНИЕ ЭТАЛОНА (5 ИЗ УР.1 + 5 ИЗ УР.2)
-Я изучаю английский онлайн. | I learn English online. | Ай лёон и́нглиш онла́йн
-Это помогает мне. | It helps me. | Ит хэлпс ми
-Ты говоришь по-английски очень хорошо. | You speak English very well. | Ю спиик и́нглиш вэри уэл
-Она делает ошибки. | She makes mistakes. | Ши мэйкс мистэ́йкс
-Мне нравится это место. | I like this place. | Ай лайк зис плэйс
-Он играет в футбол очень хорошо. | He plays football very well. | Хи плэйз фу́тбол вэри уэл
+## ПОДБЛОК 1
+Я работаю здесь. | I work here. | Ай уёок хи́э
+Мы понимаем тебя очень хорошо. | We understand you very well. | Уи андэстэ́нд ю вэри уэл
+Ты знаешь это. | You know it. | Ю ноу ит
+Они ходят на работу. | They go to work. | Зэй гоу ту уёок
+У меня есть идея. | I have an idea. | Ай хэв эн айди́а
+Мы живем в этой стране. | We live in this country. | Уи лив ин зис ка́нтри
+Я вижу это очень хорошо. | I see it very well. | Ай сии ит вэри уэл
+Ты говоришь по-английски. | You speak English. | Ю спиик и́нглиш
 Они помогают мне. | They help me. | Зэй хэлп ми
-Она учится здесь. | She studies here. | Ши ста́диз хи́э
-Мы путешествуем каждый год. | We travel every year. | Уи трэ́вл э́ври йи́э
-Он часто делает это. | He often does it. | Хи о́фн даз ит
+У меня есть брат. | I have a brother. | Ай хэв э бра́зэ
 
-## ПОДБЛОК 3: ТРАНСФОРМАЦИЯ ЛИЦ И МЕСТОИМЕНИЯ (5 ИЗ УР.1 + 5 ИЗ УР.2)
-Он видит это. | He sees it. | Хи сииз ит
-Он часто звонит мне. | He often calls me. | Хи о́фн коолз ми
-Она знает это. | She knows it. | Ши ноуз ит
-Она знает меня очень хорошо. | She knows me very well. | Ши ноуз ми вэри уэл
-Он живет в Нью-Йорке. | He lives in New York. | Хи ливз ин нью йоок
-Я слышу тебя. | I hear you. | Ай хи́э ю
-Она говорит по-английски. | She speaks English. | Ши спиикс и́нглиш
-Я вижу его. | I see him. | Ай сии хим
-Он часто думает об этом. | He often thinks about it. | Хи о́фн синкс эба́ут ит
-Она помогает им. | She helps them. | Ши хэлпс зэм
+## ПОДБЛОК 2
+Мы учимся здесь. | We study here. | Уи ста́ди хи́э
+Я помню это очень хорошо. | I remember it very well. | Ай римэ́мбэ ит вэри уэл
+Ты хочешь это. | You want it. | Ю уо́нт ит
+Они знают это. | They know it. | Зэй ноу ит
+У меня есть машина. | I have a car. | Ай хэв э каа
+Мы живем здесь. | We live here. | Уи лив хи́э
+Я думаю, ты знаешь это. | I think you know it. | Ай синк ю ноу ит
+Ты ходишь в школу. | You go to school. | Ю гоу ту скуул
+Они понимают тебя. | They understand you. | Зэй андэстэ́нд ю
+У меня есть сестра. | I have a sister. | Ай хэв э си́стэ
 
-## ПОДБЛОК 4: НАРЕЧИЯ И УСИЛИТЕЛИ (5 ИЗ УР.1 + 5 ИЗ УР.2)
-Я действительно хочу это. | I really want it. | Ай ри́эли уо́нт ит
-Он очень много работает. | He works very much. | Хи уёокс вэри матч
-Они обычно ходят туда. | They usually go there. | Зэй ю́жуали гоу зээ
-Ты так много работаешь. | You work so much. | Ю уёок соу матч
-Мы часто путешествуем. | We often travel. | Уи о́фн трэ́вл
-Я очень сильно люблю тебя. | I love you very much. | Ай лав ю вэри матч
-Ты действительно помогаешь мне. | You really help me. | Ю ри́эли хэлп ми
-Мне это так сильно нравится. | I like it so much. | Ай лайк ит соу матч
-Я обычно делаю это утром. | I usually do it in the morning. | Ай ю́жуали ду ит ин зэ мо́онин
-Он много знает. | He knows a lot. | Хи ноуз э лот
+## ПОДБЛОК 3
+Я говорю по-английски очень хорошо. | I speak English very well. | Ай спиик и́нглиш вэри уэл
+Мы думаем, ты понимаешь это. | We think you understand it. | Уи синк ю андэстэ́нд ит
+Ты работаешь здесь. | You work here. | Ю уёок хи́э
+Они учатся. | They study. | Зэй ста́ди
+У нас есть идея. | We have an idea. | Уи хэв эн айди́а
+Мы видим это очень хорошо. | We see it very well. | Уи сии ит вэри уэл
+Ты помнишь это. | You remember it. | Ю римэ́мбэ ит
+Они живут в России. | They live in Russia. | Зэй лив ин ра́ша
+Я помогаю тебе. | I help you. | Ай хэлп ю
+У нас есть машина. | We have a car. | Уи хэв э каа
 
-## ПОДБЛОК 5: СЛОЖНЫЙ МИКС (5 ИЗ УР.1 + 5 ИЗ УР.2)
-Мне нравится проводить время с друзьями. | I like spending time with my friends. | Ай лайк спэ́ндин тайм уиз май фрэндз
-Мы часто слышим это по телевизору. | We often hear it on TV. | Уи о́фн хи́э ит он ти ви
-Я вижу эту проблему. | I see this problem. | Ай сии зис про́блем
-Я понимаю тех людей. | I understand those people. | Ай андэстэ́нд зоуз пиипл
-Я смотрю разные видео. | I watch different videos. | Ай уо́тч ди́фрэн ви́диоуз
-Я живу рядом с этим местом. | I live near this place. | Ай лив ни́э зис плэйс
-Я вижу свой результат. | I see my result. | Ай сии май риза́лт
-Это стоит дороже. | It costs more. | Ит костс моо
-Нам нравится этот язык. | We like this language. | Уи лайк зис лэ́нгвидж
-Это стоит дешевле. | It costs less. | Ит костс лэс
+## ПОДБЛОК 4
+Я хочу это. | I want it. | Ай уо́нт ит
+Мы говорим по-английски. | We speak English. | Уи спиик и́нглиш
+Ты видишь это очень хорошо. | You see it very well. | Ю сии ит вэри уэл
+Они работают здесь. | They work here. | Зэй уёок хи́э
+У тебя есть брат. | You have a brother. | Ю хэв э бра́зэ
+Я живу в этой стране. | I live in this country. | Ай лив ин зис ка́нтри
+Мы помогаем тебе. | We help you. | Уи хэлп ю
+Ты знаешь это очень хорошо. | You know it very well. | Ю ноу ит вэри уэл
+Они думают, я знаю это. | They think I know it. | Зэй синк ай ноу ит
+У них есть идея. | They have an idea. | Зэй хэв эн айди́а
+
+## ПОДБЛОК 5
+Я понимаю тебя. | I understand you. | Ай андэстэ́нд ю
+Мы ходим на работу. | We go to work. | Уи гоу ту уёок
+Ты учишься здесь. | You study here. | Ю ста́ди хи́э
+Они видят это. | They see it. | Зэй сии ит
+У тебя есть сестра. | You have a sister. | Ю хэв э си́стэ
+Я помню это очень хорошо. | I remember it very well. | Ай римэ́мбэ ит вэри уэл
+Мы живем в России. | We live in Russia. | Уи лив ин ра́ша
+Ты помогаешь мне. | You help me. | Ю хэлп ми
+Они говорят по-английски очень хорошо. | They speak English very well. | Зэй спиик и́нглиш вэри уэл
+У нас есть брат. | We have a brother. | Уи хэв э бра́зэ
 
 
 # БЛОК 2: EN_TO_RU
-## ПОДБЛОК 1: БАЗОВЫЕ КОНСТРУКЦИИ
-They live in London. | Они живут в Лондоне. | Зэй лив ин ла́ндэн
-She works so much. | Она работает так много. | Ши уёокс соу матч
-I go to university. | Я хожу в университет. | Ай гоу ту юнивёосити
-He understands that student. | Он понимает того студента. | Хи андэстэ́ндз зэт стью́дэнт
-We speak English here. | Мы говорим по-английски здесь. | Уи спиик и́нглиш хи́э
-This ticket costs twenty dollars. | Этот билет стоит двадцать долларов. | Зис ти́кит костс туэ́нти до́ларз
-She lives here and works there. | Она живет здесь и работает там. | Ши ливз хи́э энд уёокс зээ
-He watches these movies. | Он смотрит эти фильмы. | Хи уо́тчиз зииз му́вииз
-They know it very well. | Они знают это очень хорошо. | Зэй ноу ит вэри уэл
-She feels much better. | Она чувствует себя намного лучше. | Ши фиилз матч бэ́тэ
 
-## ПОДБЛОК 2: ЗАКРЕПЛЕНИЕ ЭТАЛОНА
-We learn English together. | Мы учим английский вместе. | Уи лёон и́нглиш тугэ́зэ
-This method really helps us. | Этот метод действительно помогает нам. | Зис мэ́сод ри́эли хэлпс ас
-He speaks English very well. | Он говорит по-английски очень хорошо. | Хи спиикс и́нглиш вэри уэл
-He makes simple mistakes. | Он делает простые ошибки. | Хи мэйкс симпл мистэ́йкс
-They like this new place. | Им нравится это новое место. | Зэй лайк зис нью плэйс
-She plays tennis very well. | Она играет в теннис очень хорошо. | Ши плэйз тэ́нис вэри уэл
-You always help them. | Ты всегда помогаешь им. | Ю о́лвэйз хэлп зэм
-He studies online. | Он учится онлайн. | Хи ста́диз онла́йн
-She travels every summer. | Она путешествует каждое лето. | Ши трэ́влз э́ври са́мэ
-We often do it together. | Мы часто делаем это вместе. | Уи о́фн ду ит тугэ́зэ
+## ПОДБЛОК 1
+I understand you. | Я понимаю тебя. | Ай андэстэ́нд ю
+We understand you. | Мы понимаем тебя. | Уи андэстэ́нд ю
+They understand you. | Они понимают тебя. | Зэй андэстэ́нд ю
+I know it. | Я знаю это. | Ай ноу ит
+You know it. | Ты знаешь это. | Ю ноу ит
+I know it very well. | Я знаю это очень хорошо. | Ай ноу ит вэри уэл
+We know it very well. | Мы знаем это очень хорошо. | Уи ноу ит вэри уэл
+I see it. | Я вижу это. | Ай сии ит
+You see it very well. | Ты видишь это очень хорошо. | Ю сии ит вэри уэл
+We see it. | Мы видим это. | Уи сии ит
 
-## ПОДБЛОК 3: ТРАНСФОРМАЦИЯ ЛИЦ И ОБЪЕКТНЫЕ МЕСТОИМЕНИЯ
-She sees him every day. | Она видит его каждый день. | Ши сииз хим э́ври дэй
-They often call us. | Они часто звонят нам. | Зэй о́фн коол ас
-We know her brother. | Мы знаем её брата. | Уи ноу хёо бра́зэ
-He knows you very well. | Он знает тебя очень хорошо. | Хи ноуз ю вэри уэл
-They live in this country. | Они живут в этой стране. | Зэй лив ин зис ка́нтри
-We hear him. | Мы слышим его. | Уи хи́э хим
-He speaks English and French. | Он говорит по-английски и по-французски. | Хи спиикс и́нглиш энд фрэнч
-She sees them there. | Она видит их там. | Ши сииз зэм зээ
-They often think about you. | Они часто думают о тебе. | Зэй о́фн синк эба́ут ю
-I help her with English. | Я помогаю ей с английским. | Ай хэлп хёо уиз и́нглиш
+## ПОДБЛОК 2
+I work here. | Я работаю здесь. | Ай уёок хи́э
+We work here. | Мы работаем здесь. | Уи уёок хи́э
+They work here. | Они работают здесь. | Зэй уёок хи́э
+I study. | Я учусь. | Ай ста́ди
+We study here. | Мы учимся здесь. | Уи ста́ди хи́э
+I go to work. | Я хожу на работу. | Ай гоу ту уёок
+They go to work. | Они ходят на работу. | Зэй гоу ту уёок
+I go to school. | Я хожу в школу. | Ай гоу ту скуул
+We go to school. | Мы ходим в школу. | Уи гоу ту скуул
+You go to work. | Ты ходишь на работу. | Ю гоу ту уёок
 
-## ПОДБЛОК 4: НАРЕЧИЯ И УСИЛИТЕЛИ
-He really wants a new car. | Он действительно хочет новую машину. | Хи ри́эли уо́нтс э нью каа
-She works very much every week. | Она очень много работает каждую неделю. | Ши уёокс вэри матч э́ври уиик
-We usually go to that park. | Мы обычно ходим в тот парк. | Уи ю́жуали гоу ту зэт паак
-They work so much here. | Они так много работают здесь. | Зэй уёок соу матч хи́э
-He often travels to Europe. | Он часто путешествует в Европу. | Хи о́фн трэ́влз ту ю́рэп
-She loves him very much. | Она очень сильно любит его. | Ши лавз хим вэри матч
-They really help our team. | Они действительно помогают нашей команде. | Зэй ри́эли хэлп ауэ тиим
-He likes this song so much. | Ему так сильно нравится эта песня. | Хи лайкс зис сон соу матч
-She usually studies in the evening. | Она обычно учится вечером. | Ши ю́жуали ста́диз ин зи и́внин
-You know a lot about it. | Ты много знаешь об этом. | Ю ноу э лот эба́ут ит
+## ПОДБЛОК 3
+I live here. | Я живу здесь. | Ай лив хи́э
+We live here. | Мы живем здесь. | Уи лив хи́э
+They live here. | Они живут здесь. | Зэй лив хи́э
+I speak English. | Я говорю по-английски. | Ай спиик и́нглиш
+We speak English. | Мы говорим по-английски. | Уи спиик и́нглиш
+I live in Russia. | Я живу в России. | Ай лив ин ра́ша
+We live in this country. | Мы живем в этой стране. | Уи лив ин зис ка́нтри
+They live in Russia. | Они живут в России. | Зэй лив ин ра́ша
+You speak English very well. | Ты говоришь по-английски очень хорошо. | Ю спиик и́нглиш вэри уэл
+We speak English very well. | Мы говорим по-английски очень хорошо. | Уи спиик и́нглиш вэри уэл
 
-## ПОДБЛОК 5: СЛОЖНЫЙ МИКС
-They like spending time in the city. | Им нравится проводить время в городе. | Зэй лайк спэ́ндин тайм ин зэ си́ти
-I often see it on the internet. | Я часто вижу это в интернете. | Ай о́фн сии ит он зи и́нтэрнэт
-She sees these difficult problems. | Она видит эти трудные проблемы. | Ши сииз зииз ди́фикалт про́блемз
-We understand those students. | Мы понимаем тех студентов. | Уи андэстэ́нд зоуз стью́дэнтс
-He watches different lessons online. | Он смотрит разные уроки онлайн. | Хи уо́тчиз ди́фрэн лэ́снз онла́йн
-She lives very far from here. | Она живет очень далеко отсюда. | Ши ливз вэри фаа фром хи́э
-They see our real progress. | Они видят наш реальный прогресс. | Зэй сии ауэ ри́эл про́грэс
-This lesson costs less. | Этот урок стоит дешевле. | Зис лэ́сн костс лэс
-He likes learning foreign languages. | Ему нравится учить иностранные языки. | Хи лайкс лёонинг фо́рин лэ́нгвиджиз
-That book costs more. | Та книга стоит дороже. | Зэт бук костс моо
+## ПОДБЛОК 4
+I want it. | Я хочу это. | Ай уо́нт ит
+We want it. | Мы хотим это. | Уи уо́нт ит
+They want it. | Они хотят это. | Зэй уо́нт ит
+I remember it. | Я помню это. | Ай римэ́мбэ ит
+We remember it. | Мы помним это. | Уи римэ́мбэ ит
+I have a brother. | У меня есть брат. | Ай хэв э бра́зэ
+I have an idea. | У меня есть идея. | Ай хэв эн айди́а
+We have a car. | У нас есть машина. | Уи хэв э каа
+They have a sister. | У них есть сестра. | Зэй хэв э си́стэ
+You have a car. | У тебя есть машина. | Ю хэв э каа
+
+## ПОДБЛОК 5
+I see this. | Я вижу это. | Ай сии зис
+We see this. | Мы видим это. | Уи сии зис
+They see this. | Они видят это. | Зэй сии зис
+I help you. | Я помогаю тебе. | Ай хэлп ю
+They help me. | Они помогают мне. | Зэй хэлп ми
+I remember it very well. | Я помню это очень хорошо. | Ай римэ́мбэ ит вэри уэл
+We remember it very well. | Мы помним это очень хорошо. | Уи римэ́мбэ ит вэри уэл
+I live in this country. | Я живу в этой стране. | Ай лив ин зис ка́нтри
+We go to work. | Мы ходим на работу. | Уи гоу ту уёок
+You speak English very well. | Ты говоришь по-английски очень хорошо. | Ю спиик и́нглиш вэри уэл
 
 
 # БЛОК 3: ОШИБКИ
-He work so much. | He works so much. | Хи уёокс соу матч | Для 3-го лица единственного числа (he/she/it) к глаголу добавляется -s.
-She study here. | She studies here. | Ши ста́диз хи́э | Если глагол оканчивается на согласную + y, y меняется на -ies.
-He often do it. | He often does it. | Хи о́фн даз ит | Для he форма глагола 'do' меняется на 'does'.
-She watch this videos. | She watches these videos. | Ши уо́тчиз зииз ви́диоуз | После шипящих (ch) к глаголу добавляется -es, а для мн. числа videos используется these.
-She do mistakes. | She makes mistakes. | Ши мэйкс мистэ́йкс | 'Делать ошибки' — это устойчивое сочетание 'make mistakes'.
-He feels good. | He feels better. | Хи фиилз бэ́тэ | Фраза 'чувствует себя лучше' переводится как 'feels better'.
-I agree you. | I agree with you. | Ай эгри́ уиз ю | Глагол agree с человеком требует предлога: agree with you.
-He works very much hard. | He works very much. | Хи уёокс вэри матч | Наречие 'очень много' ставится в конце: works very much.
-It costs much expensive. | It costs more. | Ит костс моо | 'Стоить дороже' с глаголом cost выражается как 'costs more'.
-He often tells this thing. | He often says this thing. | Хи о́фн сэз зис син | Если адресат речи не указан, используется say (says), а не tell.
+I have an car. | I have a car. | Ай хэв э каа | Перед согласными звуками ставится артикль 'a', а не 'an'.
+We live to Russia. | We live in Russia. | Уи лив ин ра́ша | Для обозначения нахождения в стране используется предлог места 'in'.
+They helps me. | They help me. | Зэй хэлп ми | С местоимением They в Present Simple глагол употребляется без окончания -s.
+I remember very well it. | I remember it very well. | Ай римэ́мбэ ит вэри уэл | Прямое дополнение 'it' ставится сразу после глагола, а наречие — в конце.
 
 
 # БЛОК 4: АУДИРОВАНИЕ
+
 ## ПОДБЛОК 1
-He works so much. | Хи уёокс соу матч
-She understands that person. | Ши андэстэ́ндз зэт пёосн
-It costs ten dollars. | Ит костс тэн до́ларз
-He often does it. | Хи о́фн даз ит
+We live in this country. | Уи лив ин зис ка́нтри
+You speak English very well. | Ю спиик и́нглиш вэри уэл
+I remember it very well. | Ай римэ́мбэ ит вэри уэл
+I have an idea. | Ай хэв эн айди́а
 
 ## ПОДБЛОК 2
-I live in New York. | Ай лив ин нью йоок
-We travel every year. | Уи трэ́вл э́ври йи́э
-You speak English very well. | Ю спиик и́нглиш вэри уэл
-I learn English online. | Ай лёон и́нглиш онла́йн
+We go to school. | Уи гоу ту скуул
+You have an idea. | Ю хэв эн айди́а
+I see it very well. | Ай сии ит вэри уэл
+They understand you. | Зэй андэстэ́нд ю
 
 ## ПОДБЛОК 3
-She watches these videos. | Ши уо́тчиз зииз ви́диоуз
-I often go there. | Ай о́фн гоу зээ
-He plays football very well. | Хи плэйз фу́тбол вэри уэл
-They live here. | Зэй лив хи́э
+I live in Russia. | Ай лив ин ра́ша
+We have a car. | Уи хэв э каа
+You know it very well. | Ю ноу ит вэри уэл
+They speak English. | Зэй спиик и́нглиш
 
 
 # БЛОК 5: СЛОЖНЫЕ ПРЕДЛОЖЕНИЯ
-## СТУПЕНЬ 1: EN_TO_RU
-He lives in London and works very much. | Он живет в Лондоне и очень много работает. | Хи ливз ин ла́ндэн энд уёокс вэри матч
-She speaks English very well and it helps us. | Она очень хорошо говорит по-английски, и это помогает нам. | Ши спиикс и́нглиш вэри уэл энд ит хэлпс ас
-I know how that system works and I like it. | Я знаю, как работает та система, и мне это нравится. | Ай ноу хау зэт си́стэм уёокс энд ай лайк ит
-He often watches these videos because he wants to study here. | Он часто смотрит эти видео, потому что хочет учиться здесь. | Хи о́фн уо́тчиз зииз ви́диоуз бико́з хи уо́нтс ту ста́ди хи́э
 
-## СТУПЕНЬ 2: RU_TO_EN
-Я думаю, что она понимает того человека. | I think that she understands that person. | Ай синк зэт ши андэстэ́ндз зэт пёосн
-Они часто звонят мне, потому что мы делаем это вместе. | They often call me because we do it together. | Зэй о́фн коол ми бико́з уи ду ит тугэ́зэ
-Он видит эту проблему, и он чувствует себя лучше. | He sees this problem and he feels better. | Хи сииз зис про́блем энд хи фиилз бэ́тэ
-Мы знаем тех людей, и они действительно помогают нам. | We know those people and they really help us. | Уи ноу зоуз пиипл энд зэй ри́эли хэлп ас
+## СТУПЕНЬ 1: RU_TO_EN
+Я думаю, ты знаешь это очень хорошо. | I think you know it very well. | Ай синк ю ноу ит вэри уэл
+Я помню, они помогают мне. | I remember they help me. | Ай римэ́мбэ зэй хэлп ми
+Ты видишь, мы живем в этой стране. | You see we live in this country. | Ю сии уи лив ин зис ка́нтри
+Я знаю, у тебя есть идея. | I know you have an idea. | Ай ноу ю хэв эн айди́а
 
 
 # БЛОК 6: СВЯЗНЫЙ ТЕКСТ
+
 ## EN_TEXT
-My friend lives in London. He works so much and he studies online. In the evening he plays football with his friends. He speaks English very well and he often watches these videos. He sees this problem, but he feels better now. It costs ten dollars and it really helps him.
+I live in this country. I work here. I know you understand me. We speak English very well. I have a car. I go to work. They help me. I remember it very well. I have an idea. | Я живу в этой стране. Я работаю здесь. Я знаю, ты понимаешь меня. Мы говорим по-английски очень хорошо. У меня есть машина. Я хожу на работу. Они помогают мне. Я помню это очень хорошо. У меня есть идея.
 
 ## RU_TEXT
-Она живет рядом с этим местом и работает здесь. Она очень хорошо понимает тех людей. Мы часто слышим об этом по телевизору. Мой брат учится в этом городе и часто звонит мне. Он делает ошибки, но он видит свой результат. Это стоит дороже, но нам очень нравится эта работа. | She lives near this place and works here. She understands those people very well. We often hear about it on TV. My brother studies in this city and often calls me. He makes mistakes, but he sees his result. It costs more, but we really like this work.
-
+Я живу в этой стране. Я работаю здесь. Я учусь. Я знаю, ты понимаешь меня. Мы говорим по-английски очень хорошо. У меня есть брат. У меня есть сестра. Они ходят на работу. Я помню эту идею очень хорошо. Я хочу машину. Они помогают мне. Я вижу, мы живем здесь. | I live in this country. I work here. I study. I know you understand me. We speak English very well. I have a brother. I have a sister. They go to work. I remember this idea very well. I want a car. They help me. I see we live here.
