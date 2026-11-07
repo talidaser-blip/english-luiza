@@ -1221,13 +1221,32 @@
         targetFullText = (window.b6Story2 && window.b6Story2.target) ? window.b6Story2.target : (b6FullEnText || '');
       }
 
-      const splitIntoSentences = (txt) => (txt || '')
-        .replace(/([.!?])/g, '$1|')
+     // Умная разбивка вашего ввода (по точкам, переносам строк или по количеству слов эталона)
+      let userSentences = (userStory || '')
+        .replace(/([.!?\n]+)/g, '$1|')
         .split('|')
         .map(s => s.trim())
         .filter(s => s.length > 0);
 
-      const targetSentences = splitIntoSentences(targetFullText);
+      // Если весь текст вбит одной строкой без знаков препинания:
+      if (userSentences.length <= 1 && targetSentences.length > 1) {
+        let rawTokens = userStory.trim().split(/\s+/).filter(Boolean);
+        let reconstructed = [];
+
+        targetSentences.forEach((ts, idx) => {
+          let wordCount = ts.trim().split(/\s+/).filter(Boolean).length;
+          if (idx === targetSentences.length - 1) {
+            reconstructed.push(rawTokens.join(' '));
+          } else {
+            let chunk = rawTokens.splice(0, wordCount).join(' ');
+            reconstructed.push(chunk);
+          }
+        });
+
+        if (reconstructed.length === targetSentences.length) {
+          userSentences = reconstructed;
+        }
+      }
 
       // Умная разбивка вашего ввода (по точкам, переносам строк или автопоиск по фразам эталона)
       let userSentences = (userStory || '')
