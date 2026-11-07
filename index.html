@@ -3,25 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>English Master Trainer (Warm Edition)</title>
+  <title>English Master Trainer</title>
   <!-- Салют конфетти -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
     :root {
-      /* Светлая тёплая палитра */
-      --bg: #fbf9f4;                /* Нежный песочно-кремовый фон */
-      --card-bg: #ffffff;           /* Белые карточки */
-      --card-inner: #f4eee2;        /* Тёплый молочный блок задания */
-      --border: #e6dcce;            /* Мягкие бежевые границы */
-      --accent: #0c8a52;            /* Тёплый насыщенный изумруд */
-      --accent-hover: #086b3f;
-      --teal: #007a9e;              /* Морской синий */
-      --berry: #b4226f;             /* Тёплый ягодный акцент для баланса */
-      --text: #292524;              /* Глубокий кофейно-графитовый текст */
-      --text-muted: #78716c;        /* Тёплый серый */
-      --success: #059669;
-      --danger: #dc2626;
-      --shadow: 0 10px 25px -5px rgba(120, 113, 108, 0.08), 0 8px 10px -6px rgba(120, 113, 108, 0.04);
+      /* Светлая и тёплая синяя гамма */
+      --bg: #162955;
+      --card-bg: #21396c;
+      --border: #355291;
+      --box-inner: #1b2f5b;
+      --accent: #0fa368;
+      --accent-hover: #0c8856;
+      --text: #f8fafc;
+      --text-muted: #cbd5e1;
+      --success: #34d399;
+      --danger: #f87171;
+      --teal: #14b8a6;
+      --magenta: #e879f9;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
     body { 
@@ -39,20 +38,20 @@
     .header-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      padding: 18px 26px;
-      border-radius: 18px;
+      padding: 16px 24px;
+      border-radius: 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 15px;
+      box-shadow: 0 8px 24px rgba(11, 20, 48, 0.35);
     }
     .balance-title { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
     
     .balance-value { 
-      font-size: 34px; 
-      font-weight: 800; 
-      color: var(--berry); 
+      font-size: 32px; 
+      font-weight: 700; 
+      color: var(--magenta); 
       margin-top: 2px; 
       cursor: pointer;
       display: inline-flex;
@@ -61,7 +60,7 @@
       transition: opacity 0.2s;
     }
     .balance-value:hover { opacity: 0.85; }
-    .balance-edit-hint { font-size: 15px; color: var(--text-muted); }
+    .balance-edit-hint { font-size: 14px; color: var(--text-muted); }
 
     .header-controls {
       display: flex;
@@ -77,82 +76,79 @@
     }
 
     .control-select {
-      background: #ffffff;
+      background: var(--box-inner);
       color: var(--text);
       border: 1px solid var(--border);
-      padding: 9px 14px;
-      border-radius: 10px;
+      padding: 8px 12px;
+      border-radius: 8px;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 600;
       outline: none;
       cursor: pointer;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
     }
-    .control-select:focus { border-color: var(--accent); }
+    .control-select:focus { border-color: var(--teal); }
 
     .status-badge { text-align: right; font-size: 13px; color: var(--text-muted); }
-    .badge-subblock { font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; }
+    .badge-subblock { font-weight: 700; color: var(--success); text-transform: uppercase; }
 
     .reset-buttons-group {
       display: flex;
-      gap: 8px;
-      margin-top: 6px;
+      gap: 6px;
+      margin-top: 4px;
     }
 
     .btn-reset {
-      background: #fdfaf6;
+      background: transparent;
       border: 1px solid var(--border);
       color: var(--text-muted);
-      padding: 6px 10px;
-      border-radius: 8px;
+      padding: 5px 9px;
+      border-radius: 6px;
       font-size: 12px;
-      font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
     }
-    .btn-reset:hover { background: #f5ede1; color: var(--text); }
-    .btn-reset.danger:hover { background: #fee2e2; border-color: #fca5a5; color: var(--danger); }
+    .btn-reset:hover { color: #ffffff; border-color: #94a3b8; background: rgba(255, 255, 255, 0.05); }
+    .btn-reset.danger:hover { color: var(--danger); border-color: var(--danger); background: rgba(248, 113, 113, 0.1); }
 
     .trainer-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      border-radius: 20px;
-      padding: 36px 32px;
+      border-radius: 18px;
+      padding: 34px 30px;
       display: flex;
       flex-direction: column;
       gap: 22px;
+      box-shadow: 0 10px 30px rgba(11, 20, 48, 0.4);
     }
 
     .phrase-box {
-      background: var(--card-inner);
-      border: 1px solid #ebd9c2;
-      padding: 28px 24px;
-      border-radius: 16px;
+      background: var(--box-inner);
+      border: 1px solid var(--border);
+      padding: 26px 24px;
+      border-radius: 14px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 16px;
-      min-height: 120px;
+      gap: 14px;
+      min-height: 110px;
       text-align: center;
     }
 
     .phrase-text {
-      font-size: 26px;
-      font-weight: 700;
+      font-size: 24px;
+      font-weight: 600;
       line-height: 1.5;
-      color: var(--text);
     }
 
     .story-full-text {
       font-size: 20px;
-      line-height: 1.7;
-      color: #292524;
+      line-height: 1.6;
+      color: #f8fafc;
       text-align: left;
-      background: var(--card-inner);
-      border: 1px solid #ebd9c2;
-      padding: 22px 26px;
+      background: var(--box-inner);
+      border: 1px solid var(--border);
+      padding: 20px 24px;
       border-radius: 14px;
       white-space: pre-line;
     }
@@ -166,86 +162,80 @@
     }
 
     .btn-sound {
-      background: #ffffff;
-      border: 1.5px solid var(--teal);
-      color: var(--teal);
-      padding: 8px 18px;
-      border-radius: 10px;
+      background: rgba(20, 184, 166, 0.15);
+      border: 1px solid var(--teal);
+      color: #5eead4;
+      padding: 8px 16px;
+      border-radius: 8px;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 600;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      box-shadow: 0 2px 4px rgba(0, 122, 158, 0.08);
       transition: all 0.2s;
     }
-    .btn-sound:hover { background: #f0f9ff; transform: translateY(-1px); }
+    .btn-sound:hover { background: rgba(20, 184, 166, 0.3); }
 
     .input-group { display: flex; gap: 10px; align-items: center; width: 100%; }
     input[type="text"] {
       flex: 1;
       width: 100%;
-      background: #ffffff;
-      border: 1.5px solid #d6cbba;
-      color: var(--text);
+      background: var(--box-inner);
+      border: 1.5px solid var(--border);
+      color: #fff;
       padding: 16px 20px;
       border-radius: 12px;
       font-size: 18px;
-      font-weight: 500;
       outline: none;
       line-height: 1.4;
       transition: all 0.2s;
     }
     input[type="text"]:focus, textarea.story-textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(12, 138, 82, 0.15);
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.2);
     }
 
     textarea.story-textarea {
       width: 100%;
-      height: 180px;
-      background: #ffffff;
-      border: 1.5px solid #d6cbba;
-      color: var(--text);
+      height: 170px;
+      background: var(--box-inner);
+      border: 1.5px solid var(--border);
+      color: #fff;
       padding: 18px 20px;
       border-radius: 12px;
       font-size: 18px;
-      font-weight: 500;
       line-height: 1.5;
       outline: none;
       resize: vertical;
+      transition: all 0.2s;
     }
 
     .btn-action {
       background: var(--accent);
-      color: #ffffff;
+      color: #fff;
       border: none;
-      padding: 16px 30px;
+      padding: 16px 28px;
       border-radius: 12px;
       font-size: 17px;
-      font-weight: 700;
+      font-weight: 600;
       cursor: pointer;
       white-space: nowrap;
-      box-shadow: 0 4px 12px rgba(12, 138, 82, 0.2);
       transition: all 0.2s;
     }
-    .btn-action:hover { 
-      background: var(--accent-hover); 
-      transform: translateY(-1px);
-    }
+    .btn-action:hover { background: var(--accent-hover); }
 
     .btn-mic {
-      background: #ffffff;
-      border: 1.5px solid #d6cbba;
-      color: var(--berry);
-      padding: 14px 18px;
+      background: var(--box-inner);
+      border: 1px solid var(--border);
+      color: var(--magenta);
+      padding: 16px 20px;
       border-radius: 12px;
       cursor: pointer;
-      font-size: 22px;
+      font-size: 20px;
       transition: all 0.2s;
     }
-    .btn-mic:hover { border-color: var(--berry); background: #fdf4ff; }
+    .btn-mic:hover { border-color: var(--magenta); }
     .btn-mic.recording {
       background: var(--danger);
       border-color: var(--danger);
@@ -254,49 +244,53 @@
     }
 
     @keyframes pulse {
-      from { opacity: 0.7; transform: scale(0.98); }
-      to { opacity: 1; transform: scale(1.02); }
+      from { opacity: 0.7; }
+      to { opacity: 1; }
     }
 
     .status-line {
       font-size: 17px;
-      padding: 16px 20px;
-      border-radius: 12px;
+      padding: 14px 18px;
+      border-radius: 10px;
       display: none;
-      font-weight: 700;
+      font-weight: 600;
       line-height: 1.4;
     }
     .status-line.correct {
-      background: #ecfdf5 !important;
-      border: 1.5px solid #6ee7b7 !important;
-      color: var(--success) !important;
+      background: rgba(45, 212, 191, 0.18) !important;
+      border: 1px solid var(--success) !important;
+      color: #6ee7b7 !important;
       display: block !important;
     }
     .status-line.wrong {
-      background: #fef2f2 !important;
-      border: 1.5px solid #fca5a5 !important;
-      color: var(--danger) !important;
+      background: rgba(248, 113, 113, 0.18) !important;
+      border: 1px solid var(--danger) !important;
+      color: #fca5a5 !important;
       display: block !important;
     }
 
     .rule-box {
       display: none;
-      background: #fff7ed;
-      border: 1.5px solid #fed7aa;
-      padding: 18px 20px;
-      border-radius: 12px;
+      background: rgba(248, 113, 113, 0.12);
+      border: 1px solid var(--danger);
+      padding: 16px 18px;
+      border-radius: 10px;
       font-size: 16px;
-      line-height: 1.5;
-      color: #9a3412;
+      line-height: 1.45;
+      color: #fecdd3;
     }
-    .rule-title { font-weight: 800; color: #7c2d12; margin-bottom: 6px; }
+    .rule-title {
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
 
     .transcription-box {
       display: none;
-      background: #fdfaf6;
-      border: 1.5px dashed var(--border);
+      background: var(--box-inner);
+      border: 1px dashed var(--border);
       padding: 16px 20px;
-      border-radius: 12px;
+      border-radius: 10px;
       font-size: 17px;
       color: var(--text-muted);
       justify-content: space-between;
@@ -306,10 +300,10 @@
     }
     .transcription-box.visible { display: flex; }
     .transcription-text {
-      font-size: 21px;
-      font-weight: 700;
+      font-size: 20px;
+      font-weight: 600;
       font-style: normal;
-      color: var(--teal);
+      color: #38bdf8;
       margin-left: 6px;
       letter-spacing: 0.3px;
     }
@@ -333,7 +327,10 @@
 
     <div class="header-controls">
       <div class="selectors-row">
+        <!-- Выбор урока -->
         <select class="control-select" id="lessonSelector" onchange="onLessonChange()"></select>
+
+        <!-- Выбор блока -->
         <select class="control-select" id="blockSelector" onchange="onBlockChange()">
           <option value="1">Блок 1: RU ➔ EN</option>
           <option value="2">Блок 2: EN ➔ RU</option>
@@ -346,12 +343,13 @@
 
       <div class="status-badge">
         <div class="badge-subblock" id="subblockLabel">Загрузка...</div>
-        <div id="progressCount" style="margin-top: 3px; font-weight: 600;">0 из 50</div>
+        <div id="progressCount" style="margin-top: 3px;">0 из 50</div>
       </div>
     </div>
   </div>
 
   <div class="trainer-card">
+    <!-- Для Блоков 1-5: одиночная фраза -->
     <div class="phrase-box" id="singlePhraseBox">
       <div class="phrase-text" id="sourcePhrase">Загрузка урока...</div>
       <div class="audio-btns-group">
@@ -360,6 +358,7 @@
       </div>
     </div>
 
+    <!-- Для Блока 6: весь связный текст -->
     <div id="storyContainer" style="display: none; flex-direction: column; gap: 14px;">
       <div class="story-full-text" id="storyFullText"></div>
       <div class="audio-btns-group" style="justify-content: flex-start;">
@@ -368,6 +367,7 @@
       <textarea class="story-textarea" id="storyInput" placeholder="Введите весь связный перевод текста здесь или продиктуйте 🎙️..."></textarea>
     </div>
 
+    <!-- Ряд ввода -->
     <div class="input-group" id="inputGroupRow">
       <input type="text" id="userInput" placeholder="Введите ответ или продиктуйте 🎙️..." autofocus>
       <button class="btn-mic" id="micBtn" onclick="toggleMic()" title="Включить микрофон">🎙️</button>
@@ -429,7 +429,7 @@
       mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        action: 'save_english_progress_red',
+        action: 'save_english_progress',
         lesson: currentLesson,
         block: currentBlock,
         index: blockIndices[currentBlock] || 0,
@@ -441,7 +441,7 @@
   async function syncProgressFromCloud() {
     if (!GOOGLE_SCRIPT_URL) return;
     try {
-      const res = await fetch(`${GOOGLE_SCRIPT_URL}?action=get_english_progress_red&t=${Date.now()}`);
+      const res = await fetch(`${GOOGLE_SCRIPT_URL}?action=get_english_progress&t=${Date.now()}`);
       const data = await res.json();
       if (data && data.status === 'success' && data.lessons) {
         const cloudLesson = data.lessons[currentLesson];
@@ -471,7 +471,7 @@
   }
 
   function getStorageKey() {
-    return `english_trainer_warm_l${currentLesson}_v1`;
+    return `english_trainer_l${currentLesson}_v1`;
   }
 
   function capitalizeText(text) {
@@ -523,7 +523,7 @@
   }
 
   function manualEditBalance() {
-    const input = prompt(`Введите желаемый баланс для Урока ${currentLesson} в ₽:`, balance);
+    const input = prompt(`Введите желаемый баланс для Урока ${currentLesson} в ₽ (например, 0 или любое число):`, balance);
     if (input === null) return;
     const parsed = parseInt(input, 10);
     if (!isNaN(parsed)) {
@@ -574,7 +574,7 @@
   function onLessonChange() {
     const select = document.getElementById('lessonSelector');
     currentLesson = parseInt(select.value, 10);
-    localStorage.setItem('english_trainer_warm_active_lesson', currentLesson);
+    localStorage.setItem('english_trainer_active_lesson', currentLesson);
     loadLesson();
   }
 
@@ -621,11 +621,12 @@
     let currentSubblock = 'ПОДБЛОК 1';
     tasks = [];
 
+    // === Блок 6 ===
     if (currentBlock === 6) {
       let inB6 = false;
       let mode = '';
-      let enLines = [];
-      let ruLines = [];
+      window.b6Story1 = { source: '', target: '' };
+      window.b6Story2 = { source: '', target: '' };
 
       for (let rawLine of lines) {
         let line = rawLine.trim();
@@ -640,39 +641,41 @@
           const upper = line.toUpperCase();
           if (upper.includes('EN TEXT') || upper.includes('EN_TEXT')) {
             mode = 'EN';
-            if (line.includes(':')) {
-              let afterCol = line.substring(line.indexOf(':') + 1).trim();
-              if (afterCol) enLines.push(afterCol);
-            }
             continue;
           }
           if (upper.includes('RU TEXT') || upper.includes('RU_TEXT')) {
             mode = 'RU';
-            if (line.includes(':')) {
-              let afterCol = line.substring(line.indexOf(':') + 1).trim();
-              if (afterCol) ruLines.push(afterCol);
-            }
             continue;
           }
 
           if (line.startsWith('#')) continue;
 
-          let cleanLine = line.includes('|') ? line.split('|')[0].trim() : line;
-          if (mode === 'EN' && cleanLine) {
-            enLines.push(cleanLine);
-          } else if (mode === 'RU' && cleanLine) {
-            ruLines.push(cleanLine);
+          if (mode === 'EN') {
+            if (line.includes('|')) {
+              const parts = line.split('|').map(s => s.trim());
+              window.b6Story1.source = parts[0];
+              window.b6Story1.target = parts[1];
+            } else {
+              window.b6Story1.source = line;
+            }
+          } else if (mode === 'RU') {
+            if (line.includes('|')) {
+              const parts = line.split('|').map(s => s.trim());
+              window.b6Story2.source = parts[0];
+              window.b6Story2.target = parts[1];
+            } else {
+              window.b6Story2.source = line;
+            }
           }
         }
       }
 
-      b6FullEnText = enLines.join(' ');
-      b6FullRuText = ruLines.join(' ');
-      b6EnSentences = extractSentences(b6FullEnText);
-      b6RuSentences = extractSentences(b6FullRuText);
+      b6FullEnText = window.b6Story1.source;
+      b6FullRuText = window.b6Story2.source;
       return;
     }
 
+    // === Блок 5 ===
     if (currentBlock === 5) {
       b5Round1 = [];
       let inB5 = false;
@@ -686,14 +689,16 @@
           inB5 = true;
           continue;
         }
-        if (inB5 && (line.includes('БЛОК 6') && !line.includes('ПОДБЛОК'))) break;
+        if (inB5 && (line.includes('БЛОК 6') && !line.includes('ПОДБЛОК'))) {
+          break;
+        }
 
         if (inB5) {
-          if (line.toLowerCase().includes('ступень 1') || line.toLowerCase().includes('en ➔ ru') || line.toLowerCase().includes('en -> ru')) {
+          if (line.toLowerCase().includes('ступень 1') || line.toLowerCase().includes('en ➔ ru') || line.toLowerCase().includes('en -> ru') || line.toLowerCase().includes('en_to_ru')) {
             currentStage = 'Ступень 1 (EN ➔ RU)';
             continue;
           }
-          if (line.toLowerCase().includes('ступень 2') || line.toLowerCase().includes('ru ➔ en') || line.toLowerCase().includes('ru -> en')) {
+          if (line.toLowerCase().includes('ступень 2') || line.toLowerCase().includes('ru ➔ en') || line.toLowerCase().includes('ru -> en') || line.toLowerCase().includes('ru_to_en')) {
             currentStage = 'Ступень 2 (RU ➔ EN)';
             continue;
           }
@@ -702,11 +707,18 @@
           if (line.includes('|')) {
             const parts = line.split('|').map(p => p.trim());
             if (parts.length >= 2) {
-              let partA = parts[0], partB = parts[1], trans = parts[2] || '';
+              let partA = parts[0];
+              let partB = parts[1];
+              let trans = parts[2] || '';
               let enText = '', ruText = '';
 
-              if (isRussianText(partA)) { ruText = partA; enText = partB; }
-              else { enText = partA; ruText = partB; }
+              if (isRussianText(partA)) {
+                ruText = partA;
+                enText = partB;
+              } else {
+                enText = partA;
+                ruText = partB;
+              }
 
               b5Round1.push({
                 en: enText,
@@ -722,6 +734,7 @@
       return;
     }
 
+    // === Блок 4 ===
     if (currentBlock === 4) {
       b4Round1 = [];
       let inB4 = false;
@@ -734,7 +747,9 @@
           inB4 = true;
           continue;
         }
-        if (inB4 && (line.startsWith('# БЛОК 5') || line.startsWith('### БЛОК 5'))) break;
+        if (inB4 && (line.startsWith('# БЛОК 5') || line.startsWith('### БЛОК 5'))) {
+          break;
+        }
 
         if (inB4) {
           if (line.toUpperCase().includes('ПОДБЛОК')) {
@@ -746,16 +761,25 @@
           if (line.includes('|')) {
             const parts = line.split('|').map(p => p.trim());
             if (parts.length >= 1 && parts[0]) {
-              b4Round1.push({ en: parts[0], trans: parts[1] || "", subblock: currentSubblock });
+              b4Round1.push({
+                en: parts[0],
+                trans: parts[1] || "",
+                subblock: currentSubblock
+              });
             }
           } else if (line.length > 2 && !line.startsWith('#')) {
-            b4Round1.push({ en: line, trans: "", subblock: currentSubblock });
+            b4Round1.push({
+              en: line,
+              trans: "",
+              subblock: currentSubblock
+            });
           }
         }
       }
       return;
     }
 
+    // === Блок 3 ===
     if (currentBlock === 3) {
       b3Round1 = [];
       let inB3 = false;
@@ -768,15 +792,20 @@
           inB3 = true;
           continue;
         }
-        if (inB3 && (line.startsWith('# БЛОК 4') || line.startsWith('### БЛОК 4'))) break;
-
+        if (inB3 && (line.startsWith('# БЛОК 4') || line.startsWith('### БЛОК 4'))) {
+          break;
+        }
         if (inB3 && line.includes('|')) {
           const parts = line.split('|').map(p => p.trim());
           if (parts.length >= 2) {
-            let wrongStr = parts[0], correctStr = parts[1], transStr = "", ruleStr = "";
+            let wrongStr = parts[0];
+            let correctStr = parts[1];
+            let transStr = "";
+            let ruleStr = "";
 
             if (parts.length >= 4) {
-              transStr = parts[2]; ruleStr = parts[3];
+              transStr = parts[2];
+              ruleStr = parts[3];
             } else if (parts.length === 3) {
               if (/[а-яёА-ЯЁ]/.test(parts[2]) && parts[2].length < 40 && !parts[2].includes(' ')) {
                 transStr = parts[2];
@@ -797,8 +826,9 @@
       return;
     }
 
-    // Блоки 1 и 2
+    // === Блоки 1 и 2 ===
     let insideTargetBlock = false;
+
     for (let rawLine of lines) {
       let line = rawLine.trim();
       if (!line) continue;
@@ -807,8 +837,11 @@
         insideTargetBlock = true;
         continue;
       }
+      
       const nextBlockNum = currentBlock + 1;
-      if (insideTargetBlock && (line.startsWith(`# БЛОК ${nextBlockNum}`) || line.startsWith(`### БЛОК ${nextBlockNum}`)) && !line.includes('ПОДБЛОК')) break;
+      if (insideTargetBlock && (line.startsWith(`# БЛОК ${nextBlockNum}`) || line.startsWith(`### БЛОК ${nextBlockNum}`)) && !line.includes('ПОДБЛОК')) {
+        break;
+      }
 
       if (insideTargetBlock) {
         if (line.toUpperCase().includes('ПОДБЛОК')) {
@@ -820,13 +853,27 @@
         if (line.includes('|')) {
           const parts = line.split('|');
           if (parts.length >= 2) {
-            let partA = parts[0].trim(), partB = parts[1].trim(), trans = parts[2] ? parts[2].trim() : '';
-            let ruText = '', enText = '';
+            let partA = parts[0].trim();
+            let partB = parts[1].trim();
+            let trans = parts[2] ? parts[2].trim() : '';
 
-            if (isRussianText(partA)) { ruText = partA; enText = partB; }
-            else { enText = partA; ruText = partB; }
+            let ruText = '';
+            let enText = '';
 
-            tasks.push({ ru: ruText, en: enText, trans: trans, subblock: currentSubblock });
+            if (isRussianText(partA)) {
+              ruText = partA;
+              enText = partB;
+            } else {
+              enText = partA;
+              ruText = partB;
+            }
+
+            tasks.push({
+              ru: ruText,
+              en: enText,
+              trans: trans,
+              subblock: currentSubblock
+            });
           }
         }
       }
@@ -870,12 +917,14 @@
     btn.innerText = 'OK';
     isWaitingNext = false;
 
+    // === Блок 6 ===
     if (currentBlock === 6) {
       singlePhraseBox.style.display = 'none';
       input.style.display = 'none';
       storyContainer.style.display = 'flex';
 
       const currentStage = blockIndices[6] || 0;
+
       if (currentStage >= 2) {
         finishAllBlocks();
         return;
@@ -888,26 +937,28 @@
         document.getElementById('progressCount').innerText = '1 из 2';
         storyFullText.innerText = b6FullEnText || 'Загрузка рассказа...';
         listenAllBtn.style.display = 'inline-flex';
-        storyInput.placeholder = 'Прочитайте текст и введите его русский перевод...';
+        storyInput.placeholder = 'Прочитайте связный текст выше и наберите его русский перевод целиком...';
         btn.innerText = 'Проверить перевод';
         storyInput.focus();
       } else {
-        document.getElementById('subblockLabel').innerText = 'Ступень 2 (Обратный перевод)';
+        document.getElementById('subblockLabel').innerText = 'Ступень 2 (Обратный связный перевод)';
         document.getElementById('progressCount').innerText = '2 из 2';
         storyFullText.innerText = b6FullRuText || 'Загрузка рассказа...';
         listenAllBtn.style.display = 'none';
-        storyInput.placeholder = 'По памяти переведите весь русский рассказ на английский...';
+        storyInput.placeholder = 'По памяти переведите весь русский связный рассказ на английский язык...';
         btn.innerText = 'Проверить перевод';
         storyInput.focus();
       }
       return;
     }
 
+    // Для Блоков 1-5
     singlePhraseBox.style.display = 'flex';
     storyContainer.style.display = 'none';
     input.style.display = 'block';
     input.focus();
 
+    // Блок 5
     if (currentBlock === 5) {
       const currentIdx = blockIndices[5] || 0;
       const activeList = b5CurrentRound === 1 ? b5Round1 : b5Round2;
@@ -921,7 +972,7 @@
         } else {
           document.getElementById('subblockLabel').innerText = 'БЛОК ЗАВЕРШЁН';
           document.getElementById('progressCount').innerText = `${activeList.length} из ${activeList.length}`;
-          sourceEl.innerText = '🎉 Блок 5 успешно пройден!';
+          sourceEl.innerText = '🎉 Блок 5 успешно пройден! Нажмите «Заново блок ↺» для повторения или выберите другой блок в меню.';
           inputGroupRow.style.display = 'none';
           listenBtn.style.display = 'none';
         }
@@ -929,109 +980,145 @@
       }
 
       const item = activeList[currentIdx];
-      document.getElementById('subblockLabel').innerText = b5CurrentRound === 1 ? item.stage : `Штрафной раунд (${item.stage})`;
+      const stageTitle = b5CurrentRound === 1 ? item.stage : `Штрафной раунд (${item.stage})`;
+      document.getElementById('subblockLabel').innerText = stageTitle;
       document.getElementById('progressCount').innerText = `${currentIdx + 1} из ${activeList.length}`;
       document.getElementById('balanceDisplay').innerText = `${balance} ₽`;
 
       if (item.isEnToRu) {
         sourceEl.innerText = item.en;
         listenBtn.style.display = 'inline-flex';
-        input.placeholder = 'Введите перевод на русском 🎙️...';
+        input.placeholder = 'Введите перевод на русском или продиктуйте 🎙️...';
         speakEnglish(item.en, 0.9);
       } else {
         sourceEl.innerText = item.ru;
         listenBtn.style.display = 'none';
-        input.placeholder = 'Постройте предложение на английском 🎙️...';
+        input.placeholder = 'Постройте сложное предложение на английском 🎙️...';
       }
       return;
     }
 
+    // Блок 4
     if (currentBlock === 4) {
       const currentIdx = blockIndices[4] || 0;
-      const activeList = b4CurrentRound === 1 ? b4Round1 : b4Round2;
 
-      if (currentIdx >= activeList.length) {
-        if (b4CurrentRound === 1 && b4Round2.length > 0) {
-          b4CurrentRound = 2;
-          blockIndices[4] = 0;
-          saveProgress();
-          renderCurrentTask();
-          return;
-        } else {
+      if (b4CurrentRound === 1) {
+        if (currentIdx >= b4Round1.length) {
+          if (b4Round2.length > 0) {
+            b4CurrentRound = 2;
+            blockIndices[4] = 0;
+            saveProgress();
+            renderCurrentTask();
+            return;
+          } else {
+            document.getElementById('subblockLabel').innerText = 'БЛОК ЗАВЕРШЁН';
+            document.getElementById('progressCount').innerText = `${b4Round1.length} из ${b4Round1.length}`;
+            sourceEl.innerText = '🎉 Блок 4 успешно пройден! Нажмите «Заново блок ↺» для повторения или выберите другой блок в меню.';
+            inputGroupRow.style.display = 'none';
+            slowBtn.style.display = 'none';
+            listenBtn.style.display = 'none';
+            return;
+          }
+        }
+        const item = b4Round1[currentIdx];
+        sourceEl.innerText = '🎧 Слушайте и пишите на английском...';
+        listenBtn.style.display = 'inline-flex';
+        slowBtn.style.display = 'inline-flex';
+        input.placeholder = 'Наберите услышанную фразу на английском 🎙️...';
+        document.getElementById('subblockLabel').innerText = item.subblock || 'Круг 1 (Основной)';
+        document.getElementById('progressCount').innerText = `${currentIdx + 1} из ${b4Round1.length}`;
+        speakEnglish(item.en, 1.0);
+      } else {
+        if (currentIdx >= b4Round2.length) {
           document.getElementById('subblockLabel').innerText = 'БЛОК ЗАВЕРШЁН';
-          document.getElementById('progressCount').innerText = `${activeList.length} из ${activeList.length}`;
-          sourceEl.innerText = '🎉 Блок 4 успешно пройден!';
+          document.getElementById('progressCount').innerText = `${b4Round2.length} из ${b4Round2.length}`;
+          sourceEl.innerText = '🎉 Блок 4 успешно пройден! Нажмите «Заново блок ↺» для повторения или выберите другой блок в меню.';
           inputGroupRow.style.display = 'none';
           slowBtn.style.display = 'none';
           listenBtn.style.display = 'none';
           return;
         }
+        const item = b4Round2[currentIdx];
+        sourceEl.innerText = '🎧 Слушайте и пишите на английском...';
+        listenBtn.style.display = 'inline-flex';
+        slowBtn.style.display = 'inline-flex';
+        input.placeholder = 'Наберите услышанную фразу на английском 🎙️...';
+        document.getElementById('subblockLabel').innerText = 'Штрафной раунд (Пересдача)';
+        document.getElementById('progressCount').innerText = `${currentIdx + 1} из ${b4Round2.length}`;
+        speakEnglish(item.en, 1.0);
       }
-
-      const item = activeList[currentIdx];
-      sourceEl.innerText = '🎧 Слушайте и пишите на английском...';
-      listenBtn.style.display = 'inline-flex';
-      slowBtn.style.display = 'inline-flex';
-      input.placeholder = 'Наберите услышанную фразу 🎙️...';
-      document.getElementById('subblockLabel').innerText = b4CurrentRound === 1 ? (item.subblock || 'Круг 1') : 'Штрафной раунд';
-      document.getElementById('progressCount').innerText = `${currentIdx + 1} из ${activeList.length}`;
       document.getElementById('balanceDisplay').innerText = `${balance} ₽`;
-      speakEnglish(item.en, 1.0);
       return;
     }
 
+    // Блок 3
     if (currentBlock === 3) {
       listenBtn.style.display = 'none';
-      input.placeholder = 'Исправьте предложение на английском 🎙️...';
-      const currentIdx = blockIndices[3] || 0;
-      const activeList = b3CurrentRound === 1 ? b3Round1 : b3Round2;
+      input.placeholder = 'Исправьте предложение целиком на английском 🎙️...';
 
-      if (currentIdx >= activeList.length) {
-        if (b3CurrentRound === 1 && b3Round2.length > 0) {
-          b3CurrentRound = 2;
-          blockIndices[3] = 0;
-          saveProgress();
-          renderCurrentTask();
-          return;
-        } else {
+      const currentIdx = blockIndices[3] || 0;
+
+      if (b3CurrentRound === 1) {
+        if (currentIdx >= b3Round1.length) {
+          if (b3Round2.length > 0) {
+            b3CurrentRound = 2;
+            blockIndices[3] = 0;
+            saveProgress();
+            renderCurrentTask();
+            return;
+          } else {
+            document.getElementById('subblockLabel').innerText = 'БЛОК ЗАВЕРШЁН';
+            document.getElementById('progressCount').innerText = `${b3Round1.length} из ${b3Round1.length}`;
+            sourceEl.innerText = '🎉 Блок 3 успешно пройден! Нажмите «Заново блок ↺» для повторения или выберите другой блок в меню.';
+            inputGroupRow.style.display = 'none';
+            return;
+          }
+        }
+        const item = b3Round1[currentIdx];
+        sourceEl.innerText = item.wrong;
+        document.getElementById('subblockLabel').innerText = 'Круг 1 (Основной)';
+        document.getElementById('progressCount').innerText = `${currentIdx + 1} из ${b3Round1.length}`;
+      } else {
+        if (currentIdx >= b3Round2.length) {
           document.getElementById('subblockLabel').innerText = 'БЛОК ЗАВЕРШЁН';
-          document.getElementById('progressCount').innerText = `${activeList.length} из ${activeList.length}`;
-          sourceEl.innerText = '🎉 Блок 3 успешно пройден!';
+          document.getElementById('progressCount').innerText = `${b3Round2.length} из ${b3Round2.length}`;
+          sourceEl.innerText = '🎉 Блок 3 успешно пройден! Нажмите «Заново блок ↺» для повторения или выберите другой блок в меню.';
           inputGroupRow.style.display = 'none';
           return;
         }
+        const item = b3Round2[currentIdx];
+        sourceEl.innerText = item.wrong;
+        document.getElementById('subblockLabel').innerText = 'Штрафной раунд (Пересдача)';
+        document.getElementById('progressCount').innerText = `${currentIdx + 1} из ${b3Round2.length}`;
       }
-
-      const item = activeList[currentIdx];
-      sourceEl.innerText = item.wrong;
-      document.getElementById('subblockLabel').innerText = b3CurrentRound === 1 ? 'Круг 1' : 'Штрафной раунд';
-      document.getElementById('progressCount').innerText = `${currentIdx + 1} из ${activeList.length}`;
       document.getElementById('balanceDisplay').innerText = `${balance} ₽`;
       return;
     }
 
     // Блоки 1 и 2
     if (tasks.length === 0) return;
+
     let currentIdx = blockIndices[currentBlock] || 0;
 
     if (currentIdx >= tasks.length) {
       document.getElementById('subblockLabel').innerText = 'БЛОК ЗАВЕРШЁН';
       document.getElementById('progressCount').innerText = `${tasks.length} из ${tasks.length}`;
-      sourceEl.innerText = `🎉 Вы успешно прошли Блок ${currentBlock}!`;
+      sourceEl.innerText = `🎉 Вы успешно прошли Блок ${currentBlock}! Нажмите «Заново блок ↺», чтобы пройти ещё раз, или выберите другой блок в меню.`;
       inputGroupRow.style.display = 'none';
       listenBtn.style.display = 'none';
       return;
     }
 
     const t = tasks[currentIdx];
+
     if (currentBlock === 1) {
       sourceEl.innerText = t.ru;
       listenBtn.style.display = 'none';
-      input.placeholder = 'Введите английский перевод 🎙️...';
+      input.placeholder = 'Введите английский перевод или продиктуйте 🎙️...';
     } else {
       sourceEl.innerText = t.en;
       listenBtn.style.display = 'inline-flex';
-      input.placeholder = 'Введите русский перевод 🎙️...';
+      input.placeholder = 'Введите русский перевод или продиктуйте 🎙️...';
       speakEnglish(t.en);
     }
 
@@ -1101,10 +1188,28 @@
     const st = document.getElementById('statusLine');
     st.className = 'status-line correct';
     st.style.display = 'block';
-    st.innerText = `Великолепно! Все 6 блоков пройдены! Баланс урока: ${balance} ₽.`;
+    st.innerText = `Великолепно! Все 6 блоков пройдены! Баланс урока: ${balance} ₽. Чтобы повторить, нажмите «Заново блок ↺» под балансом.`;
 
     if (typeof confetti === 'function') {
-      confetti({ particleCount: 180, spread: 100, origin: { y: 0.6 } });
+      confetti({
+        particleCount: 180,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+      setTimeout(() => {
+        confetti({
+          particleCount: 120,
+          angle: 60,
+          spread: 80,
+          origin: { x: 0 }
+        });
+        confetti({
+          particleCount: 120,
+          angle: 120,
+          spread: 80,
+          origin: { x: 1 }
+        });
+      }, 400);
     }
   }
 
@@ -1141,32 +1246,54 @@
       blockIndices[currentBlock] = nextIdx;
       saveProgress();
 
-      if (currentBlock === 1 && nextIdx >= tasks.length) { advanceToBlock2(); return; }
-      if (currentBlock === 2 && nextIdx >= tasks.length) { advanceToBlock3(); return; }
+      if (currentBlock === 1 && nextIdx >= tasks.length) {
+        advanceToBlock2();
+        return;
+      }
+      if (currentBlock === 2 && nextIdx >= tasks.length) {
+        advanceToBlock3();
+        return;
+      }
       if (currentBlock === 3) {
         const activeList = b3CurrentRound === 1 ? b3Round1 : b3Round2;
         if (nextIdx >= activeList.length) {
           if (b3CurrentRound === 1 && b3Round2.length > 0) {
-            b3CurrentRound = 2; blockIndices[3] = 0; saveProgress();
-          } else { advanceToBlock4(); return; }
+            b3CurrentRound = 2;
+            blockIndices[3] = 0;
+            saveProgress();
+          } else {
+            advanceToBlock4();
+            return;
+          }
         }
       }
       if (currentBlock === 4) {
         const activeList = b4CurrentRound === 1 ? b4Round1 : b4Round2;
         if (nextIdx >= activeList.length) {
           if (b4CurrentRound === 1 && b4Round2.length > 0) {
-            b4CurrentRound = 2; blockIndices[4] = 0; saveProgress();
-          } else { advanceToBlock5(); return; }
+            b4CurrentRound = 2;
+            blockIndices[4] = 0;
+            saveProgress();
+          } else {
+            advanceToBlock5();
+            return;
+          }
         }
       }
       if (currentBlock === 5) {
         const activeList = b5CurrentRound === 1 ? b5Round1 : b5Round2;
         if (nextIdx >= activeList.length) {
           if (b5CurrentRound === 1 && b5Round2.length > 0) {
-            b5CurrentRound = 2; blockIndices[5] = 0; saveProgress();
-          } else { advanceToBlock6(); return; }
+            b5CurrentRound = 2;
+            blockIndices[5] = 0;
+            saveProgress();
+          } else {
+            advanceToBlock6();
+            return;
+          }
         }
       }
+
       renderCurrentTask();
     } else {
       checkAnswer();
@@ -1174,345 +1301,18 @@
   }
 
   function cleanText(str) {
-    return (str || '').toLowerCase().replace(/ё/g, 'е').replace(/[-–—]/g, ' ').replace(/[.,!?;:'"()]/g, '').replace(/\s+/g, ' ').trim();
-  }
-
-  function normalizeRussianWord(w) {
-    if (/^(со|с)$/.test(w)) return 'с';
-    if (/^(свой|мой|своя|моя|свое|мое|свои|мои)$/.test(w)) return 'свой';
-    return w;
-  }
-
-  function checkRussianMatch(userText, targetText) {
-    const cleanUser = cleanText(userText);
-    const cleanTarget = cleanText(targetText);
-    if (cleanUser === cleanTarget) return true;
-    const userWords = cleanUser.split(' ').filter(Boolean).map(normalizeRussianWord).sort().join(' ');
-    const targetWords = cleanTarget.split(' ').filter(Boolean).map(normalizeRussianWord).sort().join(' ');
-    return userWords === targetWords;
-  }
-
-  function isEnglishMatch(userText, targetText) {
-    let cleanUser = cleanText(userText);
-    const variants = targetText.split('/').map(v => cleanText(v));
-    return variants.includes(cleanUser);
-  }
-
-  function checkAnswer() {
-    if (isRecording) toggleMic();
-
-    const statusLine = document.getElementById('statusLine');
-    const btn = document.getElementById('actionBtn');
-    const transBox = document.getElementById('transcriptionBox');
-    const transText = document.getElementById('transcriptionText');
-    const ruleBox = document.getElementById('ruleBox');
-    const ruleText = document.getElementById('ruleText');
-
-    if (currentBlock === 6) {
-      const storyInput = document.getElementById('storyInput');
-      const userStory = storyInput.value.trim();
-      if (!userStory) return;
-
-      storyInput.disabled = true;
-      const currentStage = blockIndices[6] || 0;
-      let targetList = currentStage === 0 ? b6RuSentences : b6EnSentences;
-      let matchCount = 0;
-
-      targetList.forEach(s => {
-        let snippet = cleanText(s).slice(0, 12);
-        if (cleanText(userStory).includes(snippet)) matchCount++;
-      });
-
-      let targetFullText = currentStage === 0 ? b6FullRuText : b6FullEnText;
-
-      if (matchCount >= Math.floor(targetList.length * 0.35) || cleanText(userStory).length > cleanText(targetFullText).length * 0.45) {
-        balance += 10;
-        statusLine.className = 'status-line correct';
-        statusLine.innerText = '✓ ВЕЛИКОЛЕПНО! Связный рассказ переведён верно (+10 ₽)';
-        if (currentStage === 1) playFullStory();
-      } else {
-        balance -= 5;
-        statusLine.className = 'status-line wrong';
-        statusLine.innerText = '✕ Есть неточности в связном тексте (-5 ₽). Ознакомьтесь с эталоном:';
-        ruleText.innerHTML = `<strong>Правильный эталон:</strong><br>${targetFullText}`;
-        ruleBox.style.display = 'block';
-      }
-
-      document.getElementById('balanceDisplay').innerText = `${balance} ₽`;
-      saveProgress();
-      isWaitingNext = true;
-      btn.innerText = (currentStage === 0) ? 'Перейти к Ступени 2 ➔' : 'Завершить урок ➔';
-      return;
-    }
-
-    const input = document.getElementById('userInput');
-    const userAns = input.value.trim();
-    if (!userAns) return;
-    input.disabled = true;
-
-    if (currentBlock === 5) {
-      const currentIdx = blockIndices[5] || 0;
-      const item = b5CurrentRound === 1 ? b5Round1[currentIdx] : b5Round2[currentIdx];
-      const isCorrect = item.isEnToRu ? checkRussianMatch(userAns, item.ru) : isEnglishMatch(userAns, item.en);
-
-      if (b5CurrentRound === 1) {
-        if (isCorrect) {
-          balance += 5;
-          statusLine.className = 'status-line correct';
-          statusLine.innerText = '✓ ВЕРНО! (+5 ₽)';
-          speakEnglish(item.en, 0.9);
-          if (item.trans) { transText.innerText = item.trans; transBox.classList.add('visible'); }
-        } else {
-          balance -= 5;
-          statusLine.className = 'status-line wrong';
-          statusLine.innerText = '✕ ОШИБКА (-5 ₽) | На пересдачу!';
-          b5Round2.push(item);
-        }
-      } else {
-        if (isCorrect) {
-          balance += 3;
-          statusLine.className = 'status-line correct';
-          statusLine.innerText = '✓ ИСПРАВЛЕНО! (+3 ₽)';
-          speakEnglish(item.en, 0.9);
-          if (item.trans) { transText.innerText = item.trans; transBox.classList.add('visible'); }
-        } else {
-          statusLine.className = 'status-line wrong';
-          statusLine.innerText = '✕ ПОВТОРНАЯ ОШИБКА (0 ₽)';
-          ruleText.innerHTML = `<strong>Эталон:</strong> ${item.isEnToRu ? item.ru : item.en}`;
-          ruleBox.style.display = 'block';
-          speakEnglish(item.en, 0.9);
-        }
-      }
-
-      document.getElementById('balanceDisplay').innerText = `${balance} ₽`;
-      saveProgress();
-      isWaitingNext = true;
-      btn.innerText = 'Дальше ➔';
-      return;
-    }
-
-    if (currentBlock === 4) {
-      const currentIdx = blockIndices[4] || 0;
-      const item = b4CurrentRound === 1 ? b4Round1[currentIdx] : b4Round2[currentIdx];
-      const isCorrect = isEnglishMatch(userAns, item.en);
-
-      if (b4CurrentRound === 1) {
-        if (isCorrect) {
-          balance += 5;
-          statusLine.className = 'status-line correct';
-          statusLine.innerText = '✓ ВЕРНО! (+5 ₽)';
-          speakEnglish(item.en, 1.0);
-          if (item.trans) { transText.innerText = item.trans; transBox.classList.add('visible'); }
-        } else {
-          balance -= 5;
-          statusLine.className = 'status-line wrong';
-          statusLine.innerText = '✕ ОШИБКА (-5 ₽) | На повторение!';
-          b4Round2.push(item);
-        }
-      } else {
-        if (isCorrect) {
-          balance += 3;
-          statusLine.className = 'status-line correct';
-          statusLine.innerText = '✓ ИСПРАВЛЕНО! (+3 ₽)';
-          speakEnglish(item.en, 1.0);
-          if (item.trans) { transText.innerText = item.trans; transBox.classList.add('visible'); }
-        } else {
-          statusLine.className = 'status-line wrong';
-          statusLine.innerText = '✕ ПОВТОРНАЯ ОШИБКА (0 ₽)';
-          ruleText.innerHTML = `<strong>Эталон:</strong> ${item.en}`;
-          ruleBox.style.display = 'block';
-          speakEnglish(item.en, 1.0);
-        }
-      }
-
-      document.getElementById('balanceDisplay').innerText = `${balance} ₽`;
-      saveProgress();
-      isWaitingNext = true;
-      btn.innerText = 'Дальше ➔';
-      return;
-    }
-
-    if (currentBlock === 3) {
-      const currentIdx = blockIndices[3] || 0;
-      const item = b3CurrentRound === 1 ? b3Round1[currentIdx] : b3Round2[currentIdx];
-      const isCorrect = isEnglishMatch(userAns, item.correct);
-      const voicePhrase = item.correct.split('/')[0].trim();
-
-      if (b3CurrentRound === 1) {
-        if (isCorrect) {
-          balance += 5;
-          statusLine.className = 'status-line correct';
-          statusLine.innerText = '✓ ВЕРНО! (+5 ₽)';
-          speakEnglish(voicePhrase);
-          if (item.trans) { transText.innerText = item.trans; transBox.classList.add('visible'); }
-        } else {
-          balance -= 5;
-          statusLine.className = 'status-line wrong';
-          statusLine.innerText = '✕ ОШИБКА (-5 ₽) | На пересдачу!';
-          b3Round2.push(item);
-        }
-      } else {
-        if (isCorrect) {
-          balance += 3;
-          statusLine.className = 'status-line correct';
-          statusLine.innerText = '✓ ОШИБКА ИСПРАВЛЕНА! (+3 ₽)';
-          speakEnglish(voicePhrase);
-          if (item.trans) { transText.innerText = item.trans; transBox.classList.add('visible'); }
-        } else {
-          statusLine.className = 'status-line wrong';
-          statusLine.innerText = '✕ ПОВТОРНАЯ ОШИБКА (0 ₽)';
-          ruleText.innerHTML = `<strong>Эталон:</strong> ${item.correct}<br><span style="color:#78716c">${item.rule}</span>`;
-          ruleBox.style.display = 'block';
-          speakEnglish(voicePhrase);
-        }
-      }
-
-      document.getElementById('balanceDisplay').innerText = `${balance} ₽`;
-      saveProgress();
-      isWaitingNext = true;
-      btn.innerText = 'Дальше ➔';
-      return;
-    }
-
-    // Блоки 1 и 2
-    let currentIdx = blockIndices[currentBlock] || 0;
-    if (tasks.length === 0 || currentIdx >= tasks.length) return;
-    const t = tasks[currentIdx];
-    const isCorrect = currentBlock === 1 ? isEnglishMatch(userAns, t.en) : checkRussianMatch(userAns, t.ru);
-
-    if (isCorrect) {
-      balance += 5;
-      statusLine.className = 'status-line correct';
-      statusLine.innerText = '✓ ВЕРНО! (+5 ₽)';
-    } else {
-      balance -= 5;
-      statusLine.className = 'status-line wrong';
-      statusLine.innerText = `✕ ОШИБКА (-5 ₽) | Правильно: ${currentBlock === 1 ? t.en : t.ru}`;
-    }
-
-    document.getElementById('balanceDisplay').innerText = `${balance} ₽`;
-    saveProgress();
-    speakEnglish(t.en);
-
-    if (t.trans) {
-      transText.innerText = t.trans;
-      transBox.classList.add('visible');
-    }
-
-    isWaitingNext = true;
-    btn.innerText = 'Дальше ➔';
-  }
-
-  function playFullStory() {
-    if (b6FullEnText) speakEnglish(b6FullEnText, 0.9);
-  }
-
-  function speakEnglish(phrase, rate = 1.0) {
-    if (!('speechSynthesis' in window)) return;
-    window.speechSynthesis.cancel();
-    setTimeout(() => {
-      const ut = new SpeechSynthesisUtterance(phrase);
-      ut.lang = 'en-US';
-      ut.rate = rate;
-      window.speechSynthesis.speak(ut);
-    }, 40);
-  }
-
-  function repeatCurrentAudio(rate = 1.0) {
-    if (currentBlock === 6) playFullStory();
-    else if (currentBlock === 5) {
-      const item = b5CurrentRound === 1 ? b5Round1[blockIndices[5] || 0] : b5Round2[blockIndices[5] || 0];
-      if (item) speakEnglish(item.en, rate);
-    } else if (currentBlock === 4) {
-      const item = b4CurrentRound === 1 ? b4Round1[blockIndices[4] || 0] : b4Round2[blockIndices[4] || 0];
-      if (item) speakEnglish(item.en, rate);
-    } else if (currentBlock === 3) {
-      const item = b3CurrentRound === 1 ? b3Round1[blockIndices[3] || 0] : b3Round2[blockIndices[3] || 0];
-      if (item) speakEnglish(item.correct.split('/')[0].trim(), rate);
-    } else if (tasks.length > 0) {
-      const t = tasks[blockIndices[currentBlock] || 0];
-      if (t) speakEnglish(t.en, rate);
-    }
-  }
-
-  function initSpeech() {
-    const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!SpeechRec) return;
-
-    recognition = new SpeechRec();
-    recognition.continuous = true;
-    recognition.interimResults = false;
-
-    recognition.onresult = (event) => {
-      let chunk = '';
-      for (let i = event.resultIndex; i < event.results.length; ++i) {
-        if (event.results[i].isFinal) chunk += event.results[i][0].transcript + ' ';
-      }
-      chunk = chunk.trim();
-      if (!chunk) return;
-
-      if (currentBlock === 6) {
-        const area = document.getElementById('storyInput');
-        area.value = area.value ? (area.value + ' ' + capitalizeText(chunk)) : capitalizeText(chunk);
-      } else {
-        const input = document.getElementById('userInput');
-        speechAccumulated = speechAccumulated ? (speechAccumulated + ' ' + chunk) : chunk;
-        input.value = capitalizeText(speechAccumulated);
-      }
-    };
-
-    recognition.onerror = () => {
-      isRecording = false;
-      document.getElementById('micBtn').classList.remove('recording');
-    };
-
-    recognition.onend = () => {
-      if (isRecording) {
-        try { recognition.start(); } catch(e) {}
-      } else {
-        document.getElementById('micBtn').classList.remove('recording');
-      }
-    };
-  }
-
-  function toggleMic() {
-    if (!recognition) initSpeech();
-    if (!recognition) {
-      alert('Голосовой ввод не поддерживается браузером.');
-      return;
-    }
-
-    if (currentBlock === 6) {
-      recognition.lang = (blockIndices[6] === 0) ? 'ru-RU' : 'en-US';
-    } else if (currentBlock === 5) {
-      const item = b5CurrentRound === 1 ? b5Round1[blockIndices[5] || 0] : b5Round2[blockIndices[5] || 0];
-      recognition.lang = (item && item.isEnToRu) ? 'ru-RU' : 'en-US';
-    } else if (currentBlock === 2) {
-      recognition.lang = 'ru-RU';
-    } else {
-      recognition.lang = 'en-US';
-    }
-
-    const btn = document.getElementById('micBtn');
-    if (!isRecording) {
-      speechAccumulated = (currentBlock === 6) ? document.getElementById('storyInput').value.trim() : document.getElementById('userInput').value.trim();
-      isRecording = true;
-      btn.classList.add('recording');
-      try { recognition.start(); } catch(e) {}
-    } else {
-      isRecording = false;
-      btn.classList.remove('recording');
-      try { recognition.stop(); } catch(e) {}
-    }
-  }
-
-  window.onload = () => {
-    buildLessonOptions();
-    const savedLesson = localStorage.getItem('english_trainer_warm_active_lesson');
-    if (savedLesson) currentLesson = parseInt(savedLesson, 10);
-    initSpeech();
-    loadLesson();
-  };
-</script>
-</body>
-</html>
+    return (str || '')
+      .toLowerCase()
+      .replace(/ё/g, 'е')
+      .replace(/[-–—]/g, ' ')
+      .replace(/[.,!?;:'"()]/g, '')
+      .replace(/\b1\b/g, 'один')
+      .replace(/\b2\b/g, 'два')
+      .replace(/\b3\b/g, 'три')
+      .replace(/\b4\b/g, 'четыре')
+      .replace(/\b5\b/g, 'пять')
+      .replace(/\b10\b/g, 'десять')
+      .replace(/\b15\b/g, 'пятнадцать')
+      .replace(/\b20\b/g, 'двадцать')
+      .replace(/\s+/g, ' ')
+      .trim();
