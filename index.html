@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>English Master Trainer (Aquamarine Glow Edition)</title>
+  <title>English Master Trainer (Aquamarine Edition)</title>
   <!-- Салют конфетти -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
     :root {
       /* Палитра: 9. Аквамарин Свежесть */
-      --bg: #d5f3f4;            /* Мягкий светлый аквамариновый фон страницы */
+      --bg: #d5f3f4;            /* Светлый аквамариновый фон страницы */
       --card-bg: #eafafb;       /* Чистые свежие аквамариновые карточки */
       --card-inner: #c6eef1;    /* Светлый циан для блоков заданий */
       --border: #67e8f9;        /* Яркие свежие аквамариновые границы */
-      --accent: #0891b2;        /* Насыщенный морской циан-акцент (кнопки) */
+      --accent: #0891b2;        /* Насыщенный морской циан (кнопки) */
       --accent-hover: #0e7490;
-      --teal: #0891b2;          /* Тил для кнопок аудио */
+      --teal: #0891b2;          /* Кнопки аудио */
       --berry: #e879f9;         /* Сочная неоновая орхидея для баланса */
       --text: #155e75;          /* Чёткий глубокий морской текст */
-      --text-muted: #1e293b;    /* Контрастный приглушённый цвет */
+      --text-muted: #1e293b;    /* Контрастный тёмный цвет подписей */
       --success: #15803d;
       --danger: #c026d3;
       --shadow: 0 10px 25px -5px rgba(8, 145, 178, 0.16), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
@@ -378,7 +378,7 @@
     <div class="status-line" id="statusLine"></div>
 
     <div class="rule-box" id="ruleBox">
-      <div class="rule-title">Разбор правила:</div>
+      <div class="rule-title" id="ruleTitle">Разбор правила:</div>
       <div id="ruleText"></div>
     </div>
 
@@ -556,6 +556,7 @@
       document.getElementById('storyContainer').style.display = (currentBlock === 6) ? 'flex' : 'none';
       document.getElementById('storyInput').style.display = 'block';
       
+      parseCurrentBlock();
       saveProgress();
       renderCurrentTask();
     }
@@ -572,6 +573,15 @@
     const select = document.getElementById('blockSelector');
     currentBlock = parseInt(select.value, 10);
     isWaitingNext = false;
+    
+    // Сбрасываем возможные зависшие экраны окончания
+    document.getElementById('inputGroupRow').style.display = 'flex';
+    document.getElementById('userInput').style.display = 'block';
+    document.getElementById('micBtn').style.display = 'block';
+    document.getElementById('actionBtn').style.display = 'block';
+    document.getElementById('statusLine').style.display = 'none';
+    document.getElementById('ruleBox').style.display = 'none';
+
     parseCurrentBlock();
     saveProgress();
     renderCurrentTask();
@@ -590,7 +600,7 @@
       renderCurrentTask();
       syncProgressFromCloud();
     } catch (err) {
-      document.getElementById('sourcePhrase').innerHTML = `⚠️ Файл <b>lessons/lesson_${currentLesson}.txt</b> пока не создан в репозитории.<br><span style="font-size:16px; color:#1e293b; font-weight:normal;">Создайте папку lessons и добавьте файл урока через Add file.</span>`;
+      document.getElementById('sourcePhrase').innerHTML = `⚠️ Файл <b>lessons/lesson_${currentLesson}.txt</b> пока не создан в репозитории.<br><span style="font-size:16px; color:#1e293b; font-weight:normal;">Создайте папку lessons и добавьте файл урока.</span>`;
       document.getElementById('subblockLabel').innerText = 'Нет файла';
       document.getElementById('progressCount').innerText = '0 из 0';
       document.getElementById('listenBtn').style.display = 'none';
@@ -659,7 +669,7 @@
     if (currentBlock === 5) {
       b5Round1 = [];
       let inB5 = false;
-      let currentStage = 'Ступень 1 (EN ➔ RU)';
+      let currentStage = 'Ступень 1 (RU ➔ EN)';
 
       for (let rawLine of lines) {
         let line = rawLine.trim();
@@ -854,6 +864,7 @@
     btn.innerText = 'OK';
     isWaitingNext = false;
 
+    // Режим Блока 6
     if (currentBlock === 6) {
       singlePhraseBox.style.display = 'none';
       input.style.display = 'none';
@@ -887,6 +898,7 @@
       return;
     }
 
+    // Режим обычных блоков 1-5
     singlePhraseBox.style.display = 'flex';
     storyContainer.style.display = 'none';
     input.style.display = 'block';
@@ -996,31 +1008,32 @@
 
     // Блоки 1 и 2
     let currentIdx = blockIndices[currentBlock] || 0;
-    if (tasks.length === 0 || currentIdx >= tasks.length) return;
+    if (tasks.length === 0) return;
+
+    if (currentIdx >= tasks.length) {
+      document.getElementById('subblockLabel').innerText = 'БЛОК ЗАВЕРШЁН';
+      document.getElementById('progressCount').innerText = `${tasks.length} из ${tasks.length}`;
+      sourceEl.innerText = `🎉 Вы успешно прошли Блок ${currentBlock}!`;
+      inputGroupRow.style.display = 'none';
+      listenBtn.style.display = 'none';
+      return;
+    }
+
     const t = tasks[currentIdx];
-    const isCorrect = currentBlock === 1 ? isEnglishMatch(userAns, t.en) : checkRussianMatch(userAns, t.ru);
-
-    if (isCorrect) {
-      balance += 5;
-      statusLine.className = 'status-line correct';
-      statusLine.innerText = '✓ ВЕРНО! (+5 ₽)';
+    if (currentBlock === 1) {
+      sourceEl.innerText = t.ru;
+      listenBtn.style.display = 'none';
+      input.placeholder = 'Введите английский перевод 🎙️...';
     } else {
-      balance -= 5;
-      statusLine.className = 'status-line wrong';
-      statusLine.innerText = `✕ ОШИБКА (-5 ₽) | Правильно: ${currentBlock === 1 ? t.en : t.ru}`;
+      sourceEl.innerText = t.en;
+      listenBtn.style.display = 'inline-flex';
+      input.placeholder = 'Введите русский перевод 🎙️...';
+      speakEnglish(t.en);
     }
 
+    document.getElementById('subblockLabel').innerText = t.subblock || 'ПОДБЛОК 1';
+    document.getElementById('progressCount').innerText = `${currentIdx + 1} из ${tasks.length}`;
     document.getElementById('balanceDisplay').innerText = `${balance} ₽`;
-    saveProgress();
-    speakEnglish(t.en);
-
-    if (t.trans) {
-      transText.innerText = t.trans;
-      transBox.classList.add('visible');
-    }
-
-    isWaitingNext = true;
-    btn.innerText = 'Дальше ➔';
   }
 
   function advanceToBlock2() {
@@ -1189,8 +1202,10 @@
     const transBox = document.getElementById('transcriptionBox');
     const transText = document.getElementById('transcriptionText');
     const ruleBox = document.getElementById('ruleBox');
+    const ruleTitle = document.getElementById('ruleTitle');
     const ruleText = document.getElementById('ruleText');
 
+    // === ПРОВЕРКА БЛОКА 6 ===
     if (currentBlock === 6) {
       const storyInput = document.getElementById('storyInput');
       const userStory = storyInput.value.trim();
@@ -1206,7 +1221,7 @@
         targetFullText = (window.b6Story2 && window.b6Story2.target) ? window.b6Story2.target : (b6FullEnText || '');
       }
 
-      // Разбиваем эталон и ввод на отдельные предложения
+      // Разбиваем эталон и ваш ввод на отдельные предложения
       const splitIntoSentences = (txt) => (txt || '')
         .replace(/([.!?])/g, '$1|')
         .split('|')
@@ -1218,7 +1233,7 @@
 
       let errorsList = [];
 
-      // Строгая пословная проверка каждого предложения
+      // Строгая пословная проверка предложений
       targetSentences.forEach((targetS, idx) => {
         const userS = userSentences[idx] || '';
         const cleanT = cleanText(targetS);
@@ -1250,13 +1265,17 @@
         statusLine.className = 'status-line wrong';
         statusLine.innerText = `✕ НАЙДЕНЫ ОШИБКИ (-5 ₽)! Не совпало предложений: ${errorsList.length}`;
 
+        // Подробно показываем ошибки + ПОЛНЫЙ ЭТАЛОН РАССКАЗА
         let errorDetails = errorsList.map(e => 
           `<div style="margin-top:6px;"><strong>Предложение ${e.num}:</strong><br>` +
-          `<span style="color:#ef4444;">Ваш вариант:</span> ${e.user}<br>` +
-          `<span style="color:#10b981;">Правильно:</span> ${e.expected}</div>`
-        ).join('<hr style="border:none; border-top:1px dashed #fca5a5; margin:8px 0;">');
+          `<span style="color:#e11d48;">Ваш вариант:</span> ${e.user}<br>` +
+          `<span style="color:#059669;">Правильно:</span> ${e.expected}</div>`
+        ).join('<hr style="border:none; border-top:1px dashed #fbcfe8; margin:8px 0;">');
 
-        ruleText.innerHTML = errorDetails;
+        ruleTitle.innerText = 'Разбор ошибок и полный эталон рассказа:';
+        ruleText.innerHTML = errorDetails + 
+          `<div style="margin-top:16px; padding-top:12px; border-top:2px solid #67e8f9;">` +
+          `<strong>Полный правильный рассказ:</strong><br><span style="color:#155e75; line-height:1.6;">${targetFullText}</span></div>`;
         ruleBox.style.display = 'block';
       }
 
@@ -1300,6 +1319,7 @@
         } else {
           statusLine.className = 'status-line wrong';
           statusLine.innerText = '✕ ПОВТОРНАЯ ОШИБКА (0 ₽)';
+          ruleTitle.innerText = 'Разбор правила:';
           ruleText.innerHTML = `<strong>Эталон:</strong> ${item.isEnToRu ? item.ru : item.en}`;
           ruleBox.style.display = 'block';
           speakEnglish(item.en, 0.9);
@@ -1341,6 +1361,7 @@
         } else {
           statusLine.className = 'status-line wrong';
           statusLine.innerText = '✕ ПОВТОРНАЯ ОШИБКА (0 ₽)';
+          ruleTitle.innerText = 'Разбор правила:';
           ruleText.innerHTML = `<strong>Эталон:</strong> ${item.en}`;
           ruleBox.style.display = 'block';
           speakEnglish(item.en, 1.0);
@@ -1383,6 +1404,7 @@
         } else {
           statusLine.className = 'status-line wrong';
           statusLine.innerText = '✕ ПОВТОРНАЯ ОШИБКА (0 ₽)';
+          ruleTitle.innerText = 'Разбор правила:';
           ruleText.innerHTML = `<strong>Эталон:</strong> ${item.correct}<br><span style="color:#64748b">${item.rule}</span>`;
           ruleBox.style.display = 'block';
           speakEnglish(voicePhrase);
