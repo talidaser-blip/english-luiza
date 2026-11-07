@@ -179,7 +179,7 @@ It looks interesting because he also works in this place. | Это выгляд�
 # БЛОК 6: СВЯЗНЫЙ ТЕКСТ
 
 ## EN_TEXT
-My friend lives in London and works here. He reads in English and speaks English very well. He really loves reading English books. It looks interesting and it really helps him. He sees that mistake and remembers it. Now he feels happy. It really happens! | Мой друг живет в Лондоне и работает здесь. Он читает на английском и говорит по-английски очень хорошо. Он действительно любит читать английские книги. Это выглядит интересным, и это реально помогает ему. Он видит ту ошибку и помнит её. Сейчас он чувствует себя счастливым. Это действительно происходит!
+He lives there. He works here. He reads in English. He speaks English very well. It really helps me. He wants more practice. He feels happy. It really happens. | Он живет там. Он работает здесь. Он читает на английском. Он говорит по-английски очень хорошо. Это реально помогает мне. Он хочет больше практики. Он чувствует себя счастливым. Это действительно происходит.
 
 ## RU_TEXT
-Она живет в этом доме. Она также работает в том месте. Она часто читает книги на английском и понимает нас очень хорошо. Это кажется странным, но это действительно помогает мне. Она видит эту ошибку и хочет больше практики. Она чувствует себя счастливой здесь. | She lives in this house. She also works in that place. She often reads books in English and understands us very well. It seems strange, but it really helps me. She sees this mistake and wants more practice. She feels happy here.
+Она живет в этом доме. Она также работает здесь. Она видит эту ошибку. Она читает английские книги. Она говорит по-английски очень хорошо. Это действительно помогает мне. Она чувствует себя счастливой. Я знаю это. | She lives in this house. She also works here. She sees this mistake. She reads English books. She speaks English very well. It really helps me. She feels happy. I know it.
